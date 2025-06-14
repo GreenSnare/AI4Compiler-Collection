@@ -10,7 +10,8 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Check out repository
+        uses: actions/checkout@v3
 
       - name: Set up Conda
         uses: conda-incubator/setup-miniconda@v2
@@ -25,8 +26,7 @@ jobs:
           conda activate ai4c-papers
 
       - name: Install Python dependencies
-        run: |
-          pip install bibtexparser
+        run: pip install bibtexparser
 
       - name: Generate Markdown and JSON
         working-directory: scripts
@@ -41,7 +41,7 @@ jobs:
           cp -r scripts/* public/
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: public
 
@@ -53,4 +53,4 @@ jobs:
       url: https://${{ github.repository_owner }}.github.io/${{ github.repository }}
     steps:
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
