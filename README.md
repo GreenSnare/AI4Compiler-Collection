@@ -80,39 +80,8 @@ You’ll see the interface at http://localhost:3000 or as indicated by the serve
 
 ---
 
-## 🤝 Contributing
+##  🤝 Contributing
 
-We welcome additions and improvements!
+We welcome contributions of new papers or improvements to the site.  
 
-### 📝 How to Add a New Paper
-
-1. **Get the BibTeX**  
-   Go to [Google Scholar](https://scholar.google.com), find the paper, click the quotation mark 📖 icon, and copy the **BibTeX**.
-
-2. **Add Extra Fields**  
-   Please improve the BibTeX with the following fields:
-   - `link` – The DOI or paper URL (if available).  
-     _Example_:  
-     
-     ```bibtex
-     link = {https://doi.org/10.1145/1234567.1234568},
-     ```
-   - `keywords` – A list of your own chosen keywords (comma-separated).  
-     _Example_:  
-     
-     ```bibtex
-     keywords = {auto-tuning, LLVM, reinforcement learning},
-     ```
-   - `abstract` – Copy and paste the abstract of the paper.
-   
-3. **Save the Entry**  
-   Place the enhanced BibTeX entry at the **end of the appropriate category file** in the `bib/` directory.
-
-4. **Generate the Website Content**
-
-   ```bash
-   cd scripts
-   python 01-bib2md.py    # converts bib to papers/*.md
-   python 02-bib2json.py  # updates index.json
-   cd ..
-
+Please follow the steps in our [Contribution Guide](CONTRIBUTING.md).
