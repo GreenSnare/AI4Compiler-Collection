@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI for Compiler Papers</title>
+  <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css" />
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://unpkg.com/element-plus"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts-wordcloud@2/dist/echarts-wordcloud.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+  <style>
+    body { margin: 20px; font-family: system-ui, sans-serif; }
+    h1 { margin: 0; }
+    .wrapper { width: 60%; margin: 0 auto; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div id="app">
+      <el-container>
+        <el-header><h1>AI for Compiler Paper Collections</h1></el-header>
+
+        <el-main>
+          <!-- ──── Charts (one row, 3 columns) ──── -->
+          <el-row :gutter="20" style="margin-bottom:24px;">
+            <el-col :span="8">
+              <div id="pieVenue" style="height:280px;"></div>
+            </el-col>
+            <el-col :span="8">
+              <div id="lineYear" style="height:280px;"></div>
+            </el-col>
+            <el-col :span="8">
+              <div id="keywordCloud" style="height:280px;"></div>
+            </el-col>
+          </el-row>
+
+          <!-- ─────── Search + Filters + Sort ─────── -->
+          <el-row :gutter="20" style="margin-bottom: 20px;">
+            <!-- Search -->
+            <el-col :span="6">
+              <el-input v-model="search" placeholder="Search title, author, or venue" clearable />
+            </el-col>
+
+            <!-- Venue -->
+            <el-col :span="3">
+              <el-select v-model="selectedSource" placeholder="Venue" clearable style="width: 100%;">
+                <el-option label="All" value=""></el-option>
+                <el-option v-for="v in sources" :key="v" :label="v" :value="v"></el-option>
+              </el-select>
+            </el-col>
+
+            <!-- Category -->
+            <el-col :span="3">
+              <el-select v-model="selectedCategory" placeholder="Category" clearable style="width: 100%;">
+                <el-option label="All" value=""></el-option>
+                <el-option v-for="c in categories" :key="c" :label="c" :value="c"></el-option>
+              </el-select>
+            </el-col>
+
+            <!-- Keyword -->
+            <el-col :span="3">
+              <el-select v-model="selectedKeyword" placeholder="Keyword" clearable style="width: 100%;">
+                <el-option label="All" value=""></el-option>
+                <el-option v-for="k in keywords" :key="k" :label="k" :value="k"></el-option>
+              </el-select>
+            </el-col>
+
+            <!-- Year -->
+            <el-col :span="3">
+              <el-select v-model="selectedYear" placeholder="Year" clearable style="width: 100%;">
+                <el-option label="All" value=""></el-option>
+                <el-option v-for="y in years" :key="y" :label="y" :value="y"></el-option>
+              </el-select>
+            </el-col>
+
+            <!-- Sort -->
+            <el-col :span="6">
+              <el-select v-model="sortOption" placeholder="Sort" style="width: 100%;">
+                <el-option v-for="opt in sortOptions" :key="opt.value" :label="opt.label" :value="opt.value"></el-option>
+              </el-select>
+            </el-col>
+          </el-row>
+
+          <div style="text-align:center; margin-bottom:12px;">
+            <el-button type="primary" size="small" @click="exportCSV" plain>Export CSV</el-button>
+          </div>
+
+          <!-- ─────── Table ─────── -->
+        <el-table
+          :data="filteredPapers"
+          stripe
+          show-header
+          style="width: 100%;"
+          class="custom-table"
+          :row-key="row => row.title"
+        >
+          <el-table-column type="expand">
+            <template #default="{ row }">
+              <transition name="fade-slide">
+                <div class="abstract-box">
+                  <p v-if="row.abstract">{{ row.abstract }}</p>
+                  <p v-else>— No abstract —</p>
+                </div>
+              </transition>
+            </template>
+          </el-table-column>
+          <!-- Year -->
+          <el-table-column prop="year" label="Year" width="60">
+            <template #default="{ row }">{{ row.year ?? '—' }}</template>
+          </el-table-column>
+
+          <!-- Venue -->
+          <el-table-column prop="source" label="Venue" width="80">
+            <template #default="{ row }">
+              {{ getVenueAbbr(row.source) || row.source || '—' }}
+            </template>
+          </el-table-column>
+
+          <!-- Category -->
+          <el-table-column prop="category" label="Category" width="140">
+            <template #default="{ row }">{{ row.category ?? '—' }}</template>
+          </el-table-column>
+          <!-- Rating -->
+          <el-table-column label="Rating" width="100">
+              <template #default="{ row }">
+                <el-space wrap>
+                  <el-tag
+                    v-for="tag in getVenueRating(row.source)"
+                    :key="tag"
+                    type="warning"
+                    size="small"
+                    effect="plain"
+                  >{{ tag }}</el-tag>
+                  <span v-if="!getVenueRating(row.source).length">—</span>
+                </el-space>
+              </template>
+            </el-table-column>
+            <el-table-column prop="title" label="Title" width="430">
+              <template #default="{ row }">
+                <a :href="row.url || '#'" target="_blank" rel="noopener noreferrer">{{ row.title }}</a>
+              </template>
+            </el-table-column>
+            <!-- Keywords -->
+            <el-table-column prop="keywords" label="Keywords" width="120">
+              <template #default="{ row }">
+                <template v-if="Array.isArray(row.keywords) && row.keywords.length">
+                  <el-space wrap>
+                    <el-tag
+                      v-for="kw in row.keywords"
+                      :key="kw"
+                      size="small"
+                      type="info"
+                      effect="plain"
+                      style="margin-bottom:4px;">
+                    {{ kw }}
+                    </el-tag>
+                  </el-space>
+                </template>
+                <span v-else>—</span>
+              </template>
+            </el-table-column>
+            <el-table-column label="Authors" width="300">
+              <template #default="{ row }">{{ Array.isArray(row.authors) ? row.authors.join(', ') : row.authors || '—' }}</template>
+            </el-table-column>
+            <el-table-column label="BibTeX" width="80">
+              <template #default="{ row }">
+                <el-button size="small" @click="copyBib(row.bibtex)">Copy</el-button>
+              </template>
+            </el-table-column>
+          </el-table>
+
+          <el-pagination
+            class="pager-center"
+            :page-size="pageSize"
+            :current-page="currentPage"
+            :total="filteredPapers.length"
+            @current-change="currentPage=$event"
+            layout="prev, pager, next">
+          </el-pagination>
+        </el-main>
+      </el-container>
+    </div>
+  </div>
+
+  <script>
+    const { createApp, ref, computed, onMounted } = Vue;
+
+    createApp({
+      setup() {
+        /* ───── state ───── */
+        const papers            = ref([]);
+        const search            = ref('');
+        const selectedSource    = ref('');
+        const selectedCategory  = ref('');
+        const selectedYear      = ref('');
+        const selectedKeyword  = ref('');
+        const sortOption        = ref('year_desc');
+        const pageSize    = 20;
+        const currentPage = ref(1);
+
+        /* ───── helper maps ───── */
+        const venueRules = [
+          // Arch
+          { pattern: /Transactions on Computer Systems/i, abbr: 'TOCS', ccf: 'a'},
+          { pattern: /Transactions on Storage/i, abbr: 'TOS', ccf: 'a'},
+          { pattern: /Computer-Aided Design of Integrated Circuits and Systems/i, abbr: 'TCAD', ccf: 'a'},
+          { pattern: /Transactions on Computers/i, abbr: 'TC', ccf: 'a'},
+          { pattern: /Transactions on Parallel and Distributed Systems/i, abbr: 'TACO', ccf: 'a'},
+          { pattern: /Transactions on Design Automation of Electronic Systems/i, abbr: 'TODAES', ccf: 'b'},
+          { pattern: /Symposium on Principles & Practice of Parallel Programming/i, abbr: 'PPoPP', ccf: 'a'},
+          { pattern: /High Performance Computer Architecture/i, abbr: 'HPCA', ccf: 'a', core: 'A*'},
+          { pattern: /Symposium on Microarchitecture /i, abbr: 'MICRO', ccf: 'a'},
+          { pattern: /High Performance Computing, Networking, Storage, and Analysis/i, abbr: 'SC', ccf: 'a', core: 'A'},
+          { pattern: /Architectural Support for Programming Languages and Operating Systems/i, abbr: 'ASPLOS', ccf: 'a', core: 'A*'},
+          { pattern: /Symposium on Computer Architecture /i, abbr: 'ISCA', ccf: 'a', core: 'A*'},
+          { pattern: /European Conference on Computer Systems/i, abbr: 'EuroSys', ccf: 'a', core: 'A'},
+          { pattern: /Symposium on Code Generation and Optimization/i, abbr: 'CGO', ccf: 'b', core: 'A'},
+          { pattern: /Compiler Construction/i, abbr: 'CC', core: 'B'},
+          { pattern: /Proceedings of the IEEE/i, abbr: 'IEEE', ccf: 'a'},
+          { pattern: /Transactions on Programming Languages and Systems/i, abbr: 'TOPLAS', ccf: 'a'},
+          { pattern: /Transactions on Software Engineering and Methodology/i, abbr: 'TOSEM', ccf: 'a'},
+          { pattern: /Transactions on Software Engineering/i, abbr: 'TSE', ccf: 'a'},
+          { pattern: /Conference on Automated Software Engineering/i, abbr: 'ASE', ccf: 'a', core: 'A*'},
+          { pattern: /Proceedings of the ACM on Programming Languages/i, abbr: 'PCAMPL', ccf: 'c'},
+          { pattern: /Conference on Programming Language Design and Implementation/i, abbr: 'PLDI', ccf: 'a', core: 'A*'},
+          { pattern: /Symposium on Principles of Programming Languages/i, abbr: 'POPL', ccf: 'a', core: 'A*'},
+          { pattern: /Conference on the Foundations of Software Engineering/i, abbr: 'FSE', ccf: 'a', core: 'A*'},
+          { pattern: /Symposium on Operating Systems Principles/i, abbr: 'SOSP', ccf: 'a', core: 'A*'},
+          { pattern: / Object-Oriented Programming Systems, Languages, and Applications/i, abbr: 'OOPSLA', ccf: 'a', core: 'A'},
+          { pattern: /International Conference on Software Engineering/i, abbr: 'ICSE', ccf: 'a', core: 'A*'},
+          { pattern: /Symposium on Software Testing and Analysis/i, abbr: 'ISSTA', ccf: 'a', core: 'A'},
+          { pattern: /Operating Systems Design and Implementation/i, abbr: 'OSDI', ccf: 'a', core: 'A*'},
+          { pattern: /AAAI/i, abbr: 'AAAI', ccf: 'a', core: 'A*'},
+          { pattern: /Conference on Neural Information Processing Systems/i, abbr: 'NIPS', ccf: 'a', core: 'A*'},
+          { pattern: /Association for Computational Linguistics/i, abbr: 'ACL', ccf: 'a', core: 'A*'},
+          { pattern: /International Conference on Machine Learning/i, abbr: 'ICML', ccf: 'a', core: 'A*'},
+          { pattern: /Empirical Methods in Natural Language Processing/i, abbr: 'EMNLP', ccf: 'a', core: 'A*'},
+          { pattern: /Specification and Design Languages/i,                        abbr: 'FDL'  , core: 'C'  },
+          { pattern: /International Conference on Learning Representations/i,      abbr: 'ICLR'  , core: 'A*' },
+          { pattern: /USENIX Annual Technical Conference/i,                abbr: 'USENIX ATC', ccf: 'a' , core: 'A*' },
+          { pattern: /Parallel Architectures and Compilation Techniques/i,                abbr: 'PACT' , ccf: 'b' , core: 'B'},
+          { pattern: /arXiv/i,                                                     abbr: 'arXiv'  },
+          { pattern: /International Conference on Supercomputing/i ,abbr: 'ICS', ccf: 'b', core: 'A'}
+        ];
+
+        function getVenueAbbr(src) {
+          if (!src) return '—';
+          for (const { pattern, abbr } of venueRules) {
+            if (pattern.test(src)) return abbr;
+          }
+          return src; // 若无匹配，则返回原始字符串
+        }
+
+        function getVenueRating(src) {
+           if (!src) return [];
+           for (const { pattern, ccf, core } of venueRules) {
+             if (pattern.test(src)) {
+               const tags = [];
+               if (ccf)  tags.push(`CCF-${ccf.toUpperCase()}`);
+               if (core) tags.push(`CORE-${core}`);
+               return tags;
+             }
+           }
+           return [];
+         }
+
+        const { ElMessage } = ElementPlus;
+
+        /* ───── fetch JSON ───── */
+        onMounted(async () => {
+          const res = await fetch('index.json');
+          papers.value = await res.json();
+          renderCharts();
+        });
+
+        /* ───── filter options built from data ───── */
+        const sources = computed(() => {
+          const s = new Set(papers.value.map(p => getVenueAbbr(p.source) || p.source).filter(Boolean));
+          return Array.from(s).sort();
+        });
+        const categories = computed(() => {
+          const s = new Set(papers.value.map(p => p.category).filter(Boolean));
+          return Array.from(s).sort();
+        });
+        const years = computed(() => {
+          const s = new Set(papers.value.map(p => p.year).filter(Boolean));
+          return Array.from(s).sort((a, b) => b - a); // newest first
+        });
+        const keywords = computed(() => {
+          const s = new Set();
+          papers.value.forEach(p => {
+            (Array.isArray(p.keywords) ? p.keywords : []).forEach(k => {
+              if (k) s.add(k);
+            });
+          });
+          return Array.from(s).sort();
+        });
+
+        /* ───── sort options ───── */
+        const sortOptions = [
+          { label: 'Year ↓',     value: 'year_desc'     },
+          { label: 'Year ↑',     value: 'year_asc'      },
+          { label: 'Venue ↓',    value: 'source_desc'   },
+          { label: 'Venue ↑',    value: 'source_asc'    },
+          { label: 'Category ↓', value: 'category_desc' },
+          { label: 'Category ↑', value: 'category_asc'  },
+          { label: 'Title ↓',    value: 'title_desc'    },
+          { label: 'Title ↑',    value: 'title_asc'     },
+        ];
+        const sortField = computed(() => sortOption.value.split('_')[0]);
+        const sortDir   = computed(() => sortOption.value.split('_')[1]);
+
+        /* ───── main filter + sort ───── */
+        const filteredPapers = computed(() => {
+          let list = papers.value;
+
+          /* text search */
+          if (search.value) {
+            const q = search.value.toLowerCase();
+            list = list.filter(p =>
+              p.title.toLowerCase().includes(q) ||
+              (Array.isArray(p.authors) ? p.authors.join(', ').toLowerCase() : (p.authors || '').toLowerCase()).includes(q) ||
+              (p.source || '').toLowerCase().includes(q) ||
+              (p.category || '').toLowerCase().includes(q) ||
+              String(p.year || '').includes(q) ||
+              (Array.isArray(p.keywords) ? p.keywords.join(', ').toLowerCase() : '').includes(q)
+            );
+          }
+
+          /* venue / category / year filters */
+          if (selectedSource.value)   list = list.filter(p => (getVenueAbbr(p.source) || p.source) === selectedSource.value);
+          if (selectedCategory.value) list = list.filter(p => p.category === selectedCategory.value);
+          if (selectedYear.value)     list = list.filter(p => String(p.year) === String(selectedYear.value));
+          if (selectedKeyword.value)  list = list.filter(p => (Array.isArray(p.keywords) ? p.keywords : []).includes(selectedKeyword.value));
+
+          /* sort */
+          const field = sortField.value;
+          const dir   = sortDir.value === 'asc' ? 1 : -1;
+
+          list = list.slice().sort((a, b) => {
+            if (field === 'year')     return dir * ((a.year || 0) - (b.year || 0));
+            if (field === 'source')   return dir * ( (getVenueAbbr(a.source) || a.source).localeCompare(getVenueAbbr(b.source) || b.source) );
+            if (field === 'category') return dir * String(a.category || '').localeCompare(String(b.category || ''));
+            return dir * String(a[field] || '').localeCompare(String(b[field] || ''));
+          });
+
+          const start = (currentPage.value-1)*pageSize;
+          return list.slice(start, start+pageSize);
+        });
+
+        /* ───── copy BibTeX ───── */
+        const copyBib = bib => {
+          navigator.clipboard.writeText(bib).then(() => ElMessage.success('BibTeX copied to clipboard'));
+        };
+
+        /* ───── render charts ───── */
+        const renderCharts = () => {
+          // venue pie
+          const venueCount = {};
+          papers.value.forEach(p=>{
+            const v = getVenueAbbr(p.source) || p.source || 'Unknown';
+            venueCount[v]=(venueCount[v]||0)+1;
+          });
+          const pie = echarts.init(document.getElementById('pieVenue'));
+          const pieData = Object.entries(venueCount).map(([name, value]) => ({ name, value }));
+          pie.setOption({
+            tooltip: { trigger: 'item' },
+            title: { text: 'Venue Distribution', left: 'center' },
+            series: [{
+              type: 'pie',
+              radius: ['20%', '65%'],
+              roseType: 'area',
+              label: { show: true },
+              emphasis: { label: { show: true, fontSize: 14 } },
+              data: pieData
+            }]
+          });
+          // year line
+          const yearCount = {};
+          papers.value.forEach(p=>{
+            const y = p.year || 'Unknown';
+            yearCount[y]=(yearCount[y]||0)+1;
+          });
+          const yearsSorted = Object.keys(yearCount).sort();
+          const line = echarts.init(document.getElementById('lineYear'));
+          line.setOption({
+            title:{text:'Papers per Year', left:'center'},
+            xAxis:{type:'category', data:yearsSorted},
+            yAxis:{type:'value'},
+            series:[{type:'line', smooth:true, data:yearsSorted.map(y=>yearCount[y])}]
+          });
+
+          // --- Keyword Word Cloud ---
+          const kwCount = {};
+          papers.value.forEach(p => {
+            (Array.isArray(p.keywords) ? p.keywords : []).forEach(k => {
+              kwCount[k] = (kwCount[k] || 0) + 1;
+            });
+          });
+          const kwData = Object.entries(kwCount).map(([name, value]) => ({ name, value }));
+          const cloud = echarts.init(document.getElementById('keywordCloud'));
+          cloud.setOption({
+            title: { text: 'Keyword Cloud', left: 'center' },
+            tooltip: {},
+            series: [{
+              type: 'wordCloud',
+              gridSize: 8,
+              sizeRange: [12, 32],
+              rotationRange: [0, 0],
+              shape: 'circle',
+              textStyle: {
+                color: () => `hsl(${Math.random()*360}, 70%, 50%)`
+              },
+              data: kwData
+            }]
+          });
+        };
+
+        /* ───── export CSV ───── */
+        const csvEscape = v =>
+          `"${String(v).replace(/"/g,'""')}"`;
+        const exportCSV = ()=>{
+          const headers = ['Year','Venue','Category','Title','Keywords','Authors'];
+          const rows = papers.value.map(p => [
+            p.year,
+            csvEscape(getVenueAbbr(p.source) || p.source),
+            csvEscape(p.category || ''),
+            csvEscape(p.title),
+            csvEscape(Array.isArray(p.keywords) ? p.keywords.join('; ') : ''),
+            csvEscape(Array.isArray(p.authors) ? p.authors.join('; ') : p.authors || '')
+          ]);
+          const csv = [headers.map(csvEscape).join(','), ...rows.map(r=>r.join(','))].join('\n');
+          const blob = new Blob([csv],{type:'text/csv'});
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = 'papers.csv';
+          a.click();
+          URL.revokeObjectURL(a.href);
+        };
+
+        /* expose */
+        return {
+          papers, search,
+          selectedSource, selectedCategory, selectedYear, selectedKeyword,
+          sortOption, sortOptions,
+          getVenueAbbr, getVenueRating, sources, categories, years, keywords,
+          filteredPapers, copyBib,
+          currentPage, pageSize, exportCSV,
+        };
+      }
+    })
+      .use(ElementPlus)
+      .mount('#app');
+  </script>
+</body>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+
+    body {
+      margin: 24px;
+      font-family: 'Merriweather', "Times New Roman", system-ui, sans-serif;
+      color: #333;
+      background: #fafafa;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 16px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .wrapper {
+      width: 90%;
+      width: 1400px;
+      margin: 0 auto;
+    }
+
+    .el-table .cell {
+      font-size: 14px;
+      line-height: 22px;
+    }
+    .el-table__header .cell {
+      font-weight: 600;
+    }
+    /* 让表格列宽根据内容自动拉伸，不换行表头文字 */
+    .el-table th .cell { white-space: nowrap; }
+    .el-table .cell { white-space: normal; }
+    .pager-center { text-align:center; margin-top:16px; }
+
+    .custom-table {
+      background-color: transparent; /* 或其他你想要的颜色 */
+    }
+
+    .custom-table .el-table__header-wrapper,
+    .custom-table .el-table__body-wrapper {
+      background-color: transparent;
+    }
+
+    .fade-slide-enter-active, .fade-slide-leave-active {
+      transition: all 0.3s ease;
+    }
+    .fade-slide-enter-from, .fade-slide-leave-to {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    .fade-slide-enter-to, .fade-slide-leave-from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .abstract-box {
+      padding: 10px 20px;
+      background-color: #f9f9f9;
+      border-left: 3px solid #409EFF;
+    }
+
+    .el-table__expanded-cell {
+      overflow: hidden;
+      animation: expandRow 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .el-table__expanded-cell {
+      overflow: hidden;
+      animation: expandRow 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    @keyframes expandRow {
+      0% {
+        opacity: 0;
+        transform: translateY(-12px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+</style>
+</html>

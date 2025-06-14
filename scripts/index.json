@@ -1,0 +1,48 @@
+[
+  {
+    "id": "leather2020machine",
+    "title": "Machine learning in compilers: Past, present and future",
+    "authors": "Leather, Hugh and Cummins, Chris",
+    "year": "2020",
+    "source": "2020 Forum for Specification and Design Languages (FDL)",
+    "category": "survey",
+    "keywords": [],
+    "bibtex": "@inproceedings{leather2020machine,\n author = {Leather, Hugh and Cummins, Chris},\n booktitle = {2020 Forum for Specification and Design Languages (FDL)},\n link = {https://doi.org/10.1109/FDL50818.2020.9232934},\n organization = {IEEE},\n pages = {1--8},\n title = {Machine learning in compilers: Past, present and future},\n year = {2020}\n}\n"
+  },
+  {
+    "id": "wang2018machine",
+    "title": "Machine learning in compiler optimisation",
+    "authors": "Wang, Zheng and O'Boyle, Michael",
+    "year": "2018",
+    "source": "arXiv preprint arXiv:1805.03441",
+    "category": "survey",
+    "keywords": [],
+    "bibtex": "@article{wang2018machine,\n author = {Wang, Zheng and O'Boyle, Michael},\n journal = {arXiv preprint arXiv:1805.03441},\n link = {10.1109/JPROC.2018.2817118},\n title = {Machine learning in compiler optimisation},\n year = {2018}\n}\n"
+  },
+  {
+    "id": "haj2020neurovectorizer",
+    "title": "Neurovectorizer: End-to-end vectorization with deep reinforcement learning",
+    "authors": "Haj-Ali, Ameer and Ahmed, Nesreen K and Willke, Ted and Shao, Yakun Sophia and Asanovic, Krste and Stoica, Ion",
+    "year": "2020",
+    "source": "Proceedings of the 18th ACM/IEEE International Symposium on Code Generation and Optimization",
+    "category": "intrapass-tuning",
+    "keywords": [
+      "rl",
+      "vec"
+    ],
+    "bibtex": "@inproceedings{haj2020neurovectorizer,\n author = {Haj-Ali, Ameer and Ahmed, Nesreen K and Willke, Ted and Shao, Yakun Sophia and Asanovic, Krste and Stoica, Ion},\n booktitle = {Proceedings of the 18th ACM/IEEE International Symposium on Code Generation and Optimization},\n keywords = {rl, vec},\n pages = {242--255},\n title = {Neurovectorizer: End-to-end vectorization with deep reinforcement learning},\n year = {2020}\n}\n"
+  },
+  {
+    "id": "brauckmann2021polygym",
+    "title": "Polygym: Polyhedral optimizations as an environment for reinforcement learning",
+    "authors": "Brauckmann, Alexander and Goens, Andrés and Castrillon, Jeronimo",
+    "year": "2021",
+    "source": "2021 30th International Conference on Parallel Architectures and Compilation Techniques (PACT)",
+    "category": "intrapass-tuning",
+    "keywords": [
+      "poly",
+      "rl"
+    ],
+    "bibtex": "@inproceedings{brauckmann2021polygym,\n author = {Brauckmann, Alexander and Goens, Andrés and Castrillon, Jeronimo},\n booktitle = {2021 30th International Conference on Parallel Architectures and Compilation Techniques (PACT)},\n keywords = {poly, rl},\n organization = {IEEE},\n pages = {17--29},\n title = {Polygym: Polyhedral optimizations as an environment for reinforcement learning},\n year = {2021}\n}\n"
+  }
+]
