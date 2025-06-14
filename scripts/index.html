@@ -100,7 +100,7 @@
               <transition name="fade-slide">
                 <div class="abstract-box">
                   <p v-if="row.abstract">{{ row.abstract }}</p>
-                  <p v-else>— No abstract —</p>
+                  <p v-else>🤗No abstract Yet</p>
                 </div>
               </transition>
             </template>
@@ -138,7 +138,14 @@
             </el-table-column>
             <el-table-column prop="title" label="Title" width="430">
               <template #default="{ row }">
-                <a :href="row.url || '#'" target="_blank" rel="noopener noreferrer">{{ row.title }}</a>
+                <a
+                  :href="row.link || '#'"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="custom-link"
+                >
+                  {{ row.title }}
+                </a>
               </template>
             </el-table-column>
             <!-- Keywords -->
@@ -534,6 +541,15 @@
         opacity: 1;
         transform: translateY(0);
       }
+    }
+    .custom-link {
+      color: #444;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .custom-link:hover {
+      color: #1e90ff;
     }
 </style>
 </html>

@@ -7,7 +7,9 @@
     "source": "2020 Forum for Specification and Design Languages (FDL)",
     "category": "survey",
     "keywords": [],
-    "bibtex": "@inproceedings{leather2020machine,\n author = {Leather, Hugh and Cummins, Chris},\n booktitle = {2020 Forum for Specification and Design Languages (FDL)},\n link = {https://doi.org/10.1109/FDL50818.2020.9232934},\n organization = {IEEE},\n pages = {1--8},\n title = {Machine learning in compilers: Past, present and future},\n year = {2020}\n}\n"
+    "abstract": "Writing optimising compilers is difficult. The range of programs that may be presented to the compiler is huge and the systems on which they run are complex, heterogeneous, non-deterministic, and constantly changing. The space of possible optimisations is also vast, making it very hard for compiler writers to design heuristics that take all of these considerations into account. As a result, many compiler optimisations are out of date or poorly tuned. Near the turn of the century it was first shown how compilers could be made to automatically search the optimisation space, producing programs far better optimised than previously possible, and without the need for compiler writers to worry about architecture or program specifics. The searches, though, were slow, so in the years that followed, machine learning was developed to learn heuristics from the results of previous searches so that thereafter the search could be avoided and much of the benefit could be gained in a single shot. In this paper we will give a retrospective of machine learning in compiler optimisation from its earliest inception, through some of the works that set themselves apart, to today's deep learning, finishing with our vision of the field's future.",
+    "bibtex": "@inproceedings{leather2020machine,\n abstract = {Writing optimising compilers is difficult. The range of programs that may be presented to the compiler is huge and the systems on which they run are complex, heterogeneous, non-deterministic, and constantly changing. The space of possible optimisations is also vast, making it very hard for compiler writers to design heuristics that take all of these considerations into account. As a result, many compiler optimisations are out of date or poorly tuned. Near the turn of the century it was first shown how compilers could be made to automatically search the optimisation space, producing programs far better optimised than previously possible, and without the need for compiler writers to worry about architecture or program specifics. The searches, though, were slow, so in the years that followed, machine learning was developed to learn heuristics from the results of previous searches so that thereafter the search could be avoided and much of the benefit could be gained in a single shot. In this paper we will give a retrospective of machine learning in compiler optimisation from its earliest inception, through some of the works that set themselves apart, to today's deep learning, finishing with our vision of the field's future.},\n author = {Leather, Hugh and Cummins, Chris},\n booktitle = {2020 Forum for Specification and Design Languages (FDL)},\n link = {https://doi.org/10.1109/FDL50818.2020.9232934},\n organization = {IEEE},\n pages = {1--8},\n title = {Machine learning in compilers: Past, present and future},\n year = {2020}\n}\n",
+    "link": "https://doi.org/10.1109/FDL50818.2020.9232934"
   },
   {
     "id": "wang2018machine",
@@ -17,7 +19,9 @@
     "source": "arXiv preprint arXiv:1805.03441",
     "category": "survey",
     "keywords": [],
-    "bibtex": "@article{wang2018machine,\n author = {Wang, Zheng and O'Boyle, Michael},\n journal = {arXiv preprint arXiv:1805.03441},\n link = {10.1109/JPROC.2018.2817118},\n title = {Machine learning in compiler optimisation},\n year = {2018}\n}\n"
+    "abstract": "",
+    "bibtex": "@article{wang2018machine,\n author = {Wang, Zheng and O'Boyle, Michael},\n journal = {arXiv preprint arXiv:1805.03441},\n link = {10.1109/JPROC.2018.2817118},\n title = {Machine learning in compiler optimisation},\n year = {2018}\n}\n",
+    "link": "10.1109/JPROC.2018.2817118"
   },
   {
     "id": "haj2020neurovectorizer",
@@ -30,7 +34,9 @@
       "rl",
       "vec"
     ],
-    "bibtex": "@inproceedings{haj2020neurovectorizer,\n author = {Haj-Ali, Ameer and Ahmed, Nesreen K and Willke, Ted and Shao, Yakun Sophia and Asanovic, Krste and Stoica, Ion},\n booktitle = {Proceedings of the 18th ACM/IEEE International Symposium on Code Generation and Optimization},\n keywords = {rl, vec},\n pages = {242--255},\n title = {Neurovectorizer: End-to-end vectorization with deep reinforcement learning},\n year = {2020}\n}\n"
+    "abstract": "",
+    "bibtex": "@inproceedings{haj2020neurovectorizer,\n author = {Haj-Ali, Ameer and Ahmed, Nesreen K and Willke, Ted and Shao, Yakun Sophia and Asanovic, Krste and Stoica, Ion},\n booktitle = {Proceedings of the 18th ACM/IEEE International Symposium on Code Generation and Optimization},\n keywords = {rl, vec},\n pages = {242--255},\n title = {Neurovectorizer: End-to-end vectorization with deep reinforcement learning},\n year = {2020}\n}\n",
+    "link": ""
   },
   {
     "id": "brauckmann2021polygym",
@@ -43,6 +49,8 @@
       "poly",
       "rl"
     ],
-    "bibtex": "@inproceedings{brauckmann2021polygym,\n author = {Brauckmann, Alexander and Goens, Andrés and Castrillon, Jeronimo},\n booktitle = {2021 30th International Conference on Parallel Architectures and Compilation Techniques (PACT)},\n keywords = {poly, rl},\n organization = {IEEE},\n pages = {17--29},\n title = {Polygym: Polyhedral optimizations as an environment for reinforcement learning},\n year = {2021}\n}\n"
+    "abstract": "",
+    "bibtex": "@inproceedings{brauckmann2021polygym,\n author = {Brauckmann, Alexander and Goens, Andrés and Castrillon, Jeronimo},\n booktitle = {2021 30th International Conference on Parallel Architectures and Compilation Techniques (PACT)},\n keywords = {poly, rl},\n organization = {IEEE},\n pages = {17--29},\n title = {Polygym: Polyhedral optimizations as an environment for reinforcement learning},\n year = {2021}\n}\n",
+    "link": ""
   }
 ]

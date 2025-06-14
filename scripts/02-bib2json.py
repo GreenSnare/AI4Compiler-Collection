@@ -63,9 +63,11 @@ def main():
                 'source': entry.get('booktitle', entry.get('journal', '')),
                 'category': category,
                 'keywords': keywords,
+                'abstract': entry.get('abstract', ''),
                 'bibtex': (
                     lambda db: (setattr(db, 'entries', [entry]) or bibtexparser.dumps(db))
-                )(bibtexparser.bibdatabase.BibDatabase())
+                )(bibtexparser.bibdatabase.BibDatabase()),
+                'link' : entry.get('link', '')
             }
             all_entries.append(record)
 
