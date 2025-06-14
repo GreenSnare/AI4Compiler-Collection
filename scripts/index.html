@@ -249,7 +249,7 @@
           for (const { pattern, abbr } of venueRules) {
             if (pattern.test(src)) return abbr;
           }
-          return src; // 若无匹配，则返回原始字符串
+          return src;
         }
 
         function getVenueRating(src) {
@@ -484,13 +484,12 @@
     .el-table__header .cell {
       font-weight: 600;
     }
-    /* 让表格列宽根据内容自动拉伸，不换行表头文字 */
     .el-table th .cell { white-space: nowrap; }
     .el-table .cell { white-space: normal; }
     .pager-center { text-align:center; margin-top:16px; }
 
     .custom-table {
-      background-color: transparent; /* 或其他你想要的颜色 */
+      background-color: transparent;
     }
 
     .custom-table .el-table__header-wrapper,
