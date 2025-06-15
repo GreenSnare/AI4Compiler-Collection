@@ -107,19 +107,19 @@
           </el-table-column>
           <!-- Year -->
           <el-table-column prop="year" label="Year" width="60">
-            <template #default="{ row }">{{ row.year ?? '—' }}</template>
+            <template #default="{ row }">{{ row.year ?? '' }}</template>
           </el-table-column>
 
           <!-- Venue -->
-          <el-table-column prop="source" label="Venue" width="80">
+          <el-table-column prop="source" label="Venue" width="90">
             <template #default="{ row }">
-              {{ getVenueAbbr(row.source) || row.source || '—' }}
+              {{ getVenueAbbr(row.source) || row.source || '' }}
             </template>
           </el-table-column>
 
           <!-- Category -->
           <el-table-column prop="category" label="Category" width="140">
-            <template #default="{ row }">{{ row.category ?? '—' }}</template>
+            <template #default="{ row }">{{ row.category ?? '' }}</template>
           </el-table-column>
           <!-- Rating -->
           <el-table-column label="Rating" width="100">
@@ -132,11 +132,11 @@
                     size="small"
                     effect="plain"
                   >{{ tag }}</el-tag>
-                  <span v-if="!getVenueRating(row.source).length">—</span>
+                  <span v-if="!getVenueRating(row.source).length"></span>
                 </el-space>
               </template>
             </el-table-column>
-            <el-table-column prop="title" label="Title" width="430">
+            <el-table-column prop="title" label="Title" width="420">
               <template #default="{ row }">
                 <a
                   :href="row.link || '#'"
@@ -164,11 +164,18 @@
                     </el-tag>
                   </el-space>
                 </template>
-                <span v-else>—</span>
+                <span v-else></span>
               </template>
             </el-table-column>
             <el-table-column label="Authors" width="300">
-              <template #default="{ row }">{{ Array.isArray(row.authors) ? row.authors.join(', ') : row.authors || '—' }}</template>
+              <template #default="{ row }">
+                <span v-if="Array.isArray(row.authors)">
+                  {{ row.authors.join(', ').split(' ').slice(0, 5).join(' ') }}<span v-if="row.authors.join(', ').split(' ').length > 5">...</span>
+                </span>
+                <span v-else>
+                  {{ (row.authors || '').split(' ').slice(0, 5).join(' ') }}<span v-if="(row.authors || '').split(' ').length > 5">...</span>
+                </span>
+              </template>
             </el-table-column>
             <el-table-column label="BibTeX" width="80">
               <template #default="{ row }">
@@ -255,7 +262,7 @@
         ];
 
         function getVenueAbbr(src) {
-          if (!src) return '—';
+          if (!src) return '';
           for (const { pattern, abbr } of venueRules) {
             if (pattern.test(src)) return abbr;
           }
