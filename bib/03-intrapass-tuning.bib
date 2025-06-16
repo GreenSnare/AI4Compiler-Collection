@@ -21,3 +21,81 @@
   link = {https://proceedings.mlr.press/v139/cummins21a.html},
   keywords = {loop,dfg,SVM},
 }
+
+@inproceedings{haj2020neurovectorizer,
+  title={Neurovectorizer: End-to-end vectorization with deep reinforcement learning},
+  author={Haj-Ali, Ameer and Ahmed, Nesreen K and Willke, Ted and Shao, Yakun Sophia and Asanovic, Krste and Stoica, Ion},
+  booktitle={Proceedings of the 18th ACM/IEEE International Symposium on Code Generation and Optimization},
+  pages={242--255},
+  year={2020},
+  abstract = {One of the key challenges arising when compilers vectorize loops for today’s SIMD-compatible architectures is to decide if vectorization or interleaving is beneficial. Then, the compiler has to determine the number of instructions to pack together and the interleaving level (stride). Compilers are designed today to use fixed-cost models that are based on heuristics to make vectorization decisions on loops. However, these models are unable to capture the data dependency, the computation graph, or the organization of instructions. Alternatively, software engineers often hand-write the vectorization factors of every loop. This, however, places a huge burden on them, since it requires prior experience and significantly increases the development time.
+In this work, we explore a novel approach for handling loop vectorization and propose an end-to-end solution using deep reinforcement learning (RL). We conjecture that deep RL can capture different instructions, dependencies, and data structures to enable learning a sophisticated model that can better predict the actual performance cost and determine the optimal vectorization factors. We develop an end-to-end framework, from code to vectorization, that integrates deep RL in the LLVM compiler. Our proposed framework takes benchmark codes as input and extracts the loop codes. These loop codes are then fed to a loop embedding generator that learns an embedding for these loops. Finally, the learned embeddings are used as input to a Deep RL agent, which dynamically determines the vectorization factors for all the loops. We further extend our framework to support random search, decision trees, supervised neural networks, and nearest-neighbor search. We evaluate our approaches against the currently used LLVM vectorizer and loop polyhedral optimization techniques. Our experiments show 1.29×−4.73× performance speedup compared to baseline and only 3% worse than the brute-force search on a wide range of benchmarks.},
+  link = {https://dl.acm.org/doi/abs/10.1145/3368826.3377928},
+  keywords = {loop,rl},
+}
+
+@inproceedings{brauckmann2021polygym,
+  title={Polygym: Polyhedral optimizations as an environment for reinforcement learning},
+  author={Brauckmann, Alexander and Goens, Andr{\'e}s and Castrillon, Jeronimo},
+  booktitle={2021 30th International Conference on Parallel Architectures and Compilation Techniques (PACT)},
+  pages={17--29},
+  year={2021},
+  organization={IEEE},
+  keywords = {rl,poly},
+  abstract = {The polyhedral model allows a structured way of defining semantics-preserving transformations to improve the performance of a large class of loops. Finding profitable points in this space is a hard problem which is usually approached by heuristics that generalize from domain-expert knowledge. Existing search space formulations in state-of-the-art heuristics depend on the shape of particular loops, making it hard to leverage generic and more powerful optimization techniques from the machine learning domain. In this paper, we propose a shape-agnostic formulation for the space of legal transformations in the polyhedral model as a Markov Decision Process (MDP). Instead of using transformations, the formulation is based on an abstract space of possible schedules. In this formulation, states model partial schedules, which are constructed by actions that are reusable across different loops. With a simple heuristic to traverse the space, we demonstrate that our formulation is powerful enough to match and outperform state-of-the-art heuristics. On the Polybench benchmark suite, we found the search space to contain transformations that lead to a speedup of 3.39x over LLVM O3, which is 1.34x better than the best transformations found in the search space of isl, and 1.83x better than the speedup achieved by the default heuristics of isl. Our generic MDP formulation enables future work to use reinforcement learning to learn optimization heuristics over a wide range of loops. This also contributes to the emerging field of machine learning in compilers, as it exposes a novel problem formulation that can push the limits of existing methods.},
+  link = {10.1109/PACT52795.2021.00009},
+}
+
+@article{trofin2021mlgo,
+  title={Mlgo: a machine learning guided compiler optimizations framework},
+  author={Trofin, Mircea and Qian, Yundi and Brevdo, Eugene and Lin, Zinan and Choromanski, Krzysztof and Li, David},
+  journal={arXiv preprint arXiv:2101.04808},
+  year={2021},
+  abstract = {Leveraging machine-learning (ML) techniques for compiler optimizations has been widely studied and explored in academia. However, the adoption of ML in general-purpose, industry strength compilers has yet to happen. We propose MLGO, a framework for integrating ML techniques systematically in an industrial compiler -- LLVM. As a case study, we present the details and results of replacing the heuristics-based inlining-for-size optimization in LLVM with machine learned models. To the best of our knowledge, this work is the first full integration of ML in a complex compiler pass in a real-world setting. It is available in the main LLVM repository. We use two different ML algorithms: Policy Gradient and Evolution Strategies, to train the inlining-for-size model, and achieve up to 7\% size reduction, when compared to state of the art LLVM -Oz. The same model, trained on one corpus, generalizes well to a diversity of real-world targets, as well as to the same set of targets after months of active development. This property of the trained models is beneficial to deploy ML techniques in real-world settings.},
+  keywords = {codesize,inline},
+  link = {https://arxiv.org/abs/2101.04808},
+}
+
+@inproceedings{venkatakeerthy2023rl4real,
+  title={Rl4real: Reinforcement learning for register allocation},
+  author={VenkataKeerthy, S and Jain, Siddharth and Kundu, Anilava and Aggarwal, Rohit and Cohen, Albert and Upadrasta, Ramakrishna},
+  booktitle={Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction},
+  pages={133--144},
+  year={2023},
+  abstract = {We aim to automate decades of research and experience in register allocation, leveraging machine learning. We tackle this problem by embedding a multi-agent reinforcement learning algorithm within LLVM, training it with the state of the art techniques. We formalize the constraints that precisely define the problem for a given instruction-set architecture, while ensuring that the generated code preserves semantic correctness. We also develop a gRPC based framework providing a modular and efficient compiler interface for training and inference. Our approach is architecture independent: we show experimental results targeting Intel x86 and ARM AArch64. Our results match or out-perform the heavily tuned, production-grade register allocators of LLVM.},
+  keywords = {rl,register alloc,llvm-mca},
+  link = {https://dl.acm.org/doi/abs/10.1145/3578360.3580273},
+}
+
+@inproceedings{zheng2024mloop,
+  title={mLOOP: Optimize Loop Unrolling in Compilation with a ML-based Approach},
+  author={Zheng, Zhongchun and Wu, Yuan and Zhang, Xianwei},
+  booktitle={2024 International Conference on Networking, Architecture and Storage (NAS)},
+  pages={1--8},
+  year={2024},
+  organization={IEEE},
+  abstract = {Loops are a fundamental component of programs, providing an structured and efficient way to execute repetitive tasks. Given their prevalence and significance, the performance of loops has a direct impact on the overall execution of a program. Predicting loop unroll factor holds remarkable importance in the domain of loop optimization and vectorization parallelism. With the rapid advancements in this field, leveraging machine learning (ML) methods for compilation optimization has emerged as a new research focus. Whereas traditional heuristic algorithms lack precision and Profile-Guided Optimization (PGO) techniques incur considerable compilation overhead, ML method serve as a more balanced approach with respect to accuracy and compilation time. Nonetheless, existing ML approaches are commonly confined to individual optimizations and fail to consider the interplay between multiple optimizations. Additionally, there is inadequate utilization of compilation optimization parameters, resulting in redundant calculations across different optimization processes. This paper proposes mLOOP, a method that employs the XGBoost model to predict loop unroll factors which are integrated into the metadata for use throughout the compilation pipeline. To facilitate deployment and testing in practices, mLOOP is encapsulated into a LLVM optimization pass. By testing on multiple loop-intensive benchmarks, mLOOP achieves 7% speedup on X86 platform and 12% on ARM.},
+  link = {10.1109/NAS63802.2024.10781373},
+  keywords = {loop},
+}
+
+@article{ashouri2022mlgoperf,
+  title={Mlgoperf: An ml guided inliner to optimize performance},
+  author={Ashouri, Amir H and Elhoushi, Mostafa and Hua, Yuzhe and Wang, Xiang and Manzoor, Muhammad Asif and Chan, Bryan and Gao, Yaoqing},
+  journal={arXiv preprint arXiv:2207.08389},
+  year={2022},
+  abstract = {For the past 25 years, we have witnessed an extensive application of Machine Learning to the Compiler space; the selection and the phase-ordering problem. However, limited works have been upstreamed into the state-of-the-art compilers, i.e., LLVM, to seamlessly integrate the former into the optimization pipeline of a compiler to be readily deployed by the user. MLGO was among the first of such projects and it only strives to reduce the code size of a binary with an ML-based Inliner using Reinforcement Learning.This paper presents MLGOPerf; the first end-to-end framework capable of optimizing performance using LLVM's ML-Inliner. It employs a secondary ML model to generate rewards used for training a retargeted Reinforcement learning agent, previously used as the primary model by MLGO. It does so by predicting the post-inlining speedup of a function under analysis and it enables a fast training framework for the primary model which otherwise wouldn't be practical. The experimental results show MLGOPerf is able to gain up to 1.8% and 2.2% with respect to LLVM's optimization at O3 when trained for performance on SPEC CPU2006 and Cbench benchmarks, respectively. Furthermore, the proposed approach provides up to 26% increased opportunities to autotune code regions for our benchmarks which can be translated into an additional 3.7% speedup value.},
+  link = {https://arxiv.org/abs/2207.08389},
+  keywords = {inline}
+}
+
+@article{mendis2019compiler,
+  title={Compiler auto-vectorization with imitation learning},
+  author={Mendis, Charith and Yang, Cambridge and Pu, Yewen and Amarasinghe, Dr Saman and Carbin, Michael},
+  journal={Advances in Neural Information Processing Systems},
+  volume={32},
+  year={2019},
+  abstract = {Modern microprocessors are equipped with single instruction multiple data (SIMD) or vector instruction sets which allow compilers to exploit fine-grained data level parallelism. To exploit this parallelism, compilers employ auto-vectorization techniques to automatically convert scalar code into vector code. Larsen & Amarasinghe (2000) first introduced superword level parallelism (SLP) based vectorization, which is one form of vectorization popularly used by compilers. Current compilers employ hand-crafted heuristics and typically only follow one SLP vectorization strategy which can be suboptimal. Recently, Mendis & Amarasinghe (2018) formulated the instruction packing problem of SLP vectorization by leveraging an integer linear programming (ILP) solver, achieving superior runtime performance. In this work, we explore whether it is feasible to imitate optimal decisions made by their ILP solution by fitting a graph neural network policy. We show that the learnt policy produces a vectorization scheme which is better than industry standard compiler heuristics both in terms of static measures and runtime performance. More specifically, the learnt agent produces a vectorization scheme which has a 22.6% higher average reduction in cost compared to LLVM compiler when measured using its own cost model and achieves a geometric mean runtime speedup of 1.015× on the NAS benchmark suite when compared to LLVM’s SLP vectorizer.},
+  keywords = {loop,slp},
+  link = {https://proceedings.neurips.cc/paper/2019/hash/d1d5923fc822531bbfd9d87d4760914b-Abstract.html},
+}

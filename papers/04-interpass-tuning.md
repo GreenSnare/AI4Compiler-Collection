@@ -24,3 +24,13 @@
 
 - ![year](https://img.shields.io/badge/year-2021-blue) ![src](https://img.shields.io/badge/src-ICSE-orange) [Efficient compiler autotuning via bayesian optimization](https://ieeexplore.ieee.org/abstract/document/9401979) — Chen, Junjie and Xu, Ningxin and Chen, Peiqi and Zhang, Hongyu
 
+- ![year](https://img.shields.io/badge/year-2019-blue) ![src](https://img.shields.io/badge/src-FCCM-orange) [Autophase: Compiler phase-ordering for hls with deep reinforcement learning](https://doi.org/10.1109/FCCM.2019.00049) — Huang, Qijing and Haj-Ali, Ameer and Moses, William and Xiang, John and Stoica, Ion and Asanovic, Krste and Wawrzynek, John
+
+- ![year](https://img.shields.io/badge/year-2017-blue) ![src](https://img.shields.io/badge/src-TACO-orange) [Micomp: Mitigating the compiler phase-ordering problem using optimization sub-sequences and machine learning](https://dl.acm.org/doi/abs/10.1145/3124452) — Ashouri, Amir H and Bignoli, Andrea and Palermo, Gianluca and Silvano, Cristina and Kulkarni, Sameer and Cavazos, John
+
+- ![year](https://img.shields.io/badge/year-2024-blue) ![src](https://img.shields.io/badge/src-CGO-orange) [Revealing compiler heuristics through automated discovery and optimization](https://doi.org/10.1109/CGO57630.2024.10444847) — Seeker, Volker and Cummins, Chris and Cole, Murray and Franke, Bj{\"o}rn and Hazelwood, Kim and Leather, Hugh
+
+- ![year](https://img.shields.io/badge/year-2024-blue) ![src](https://img.shields.io/badge/src-PAISSPLC-orange) [Optimization Space Learning: A Lightweight, Noniterative Technique for Compiler Autotuning](https://dl.acm.org/doi/abs/10.1145/3646548.3672588) — Burgstaller, Tamim and Garber, Damian and Le, Viet-Man and Felfernig, Alexander
+
+- ![year](https://img.shields.io/badge/year-2016-blue) ![src](https://img.shields.io/badge/src-PGECCC-orange) [Evolutionary optimization of compiler flag selection by learning and exploiting flags interactions](https://dl.acm.org/doi/abs/10.1145/2908961.2931696) — Garciarena, Unai and Santana, Roberto
+
