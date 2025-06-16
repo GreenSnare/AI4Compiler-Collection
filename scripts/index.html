@@ -111,7 +111,7 @@
           </el-table-column>
 
           <!-- Venue -->
-          <el-table-column prop="source" label="Venue" width="90">
+          <el-table-column prop="source" label="Venue" width="100">
             <template #default="{ row }">
               {{ getVenueAbbr(row.source) || row.source || '' }}
             </template>
@@ -167,7 +167,7 @@
                 <span v-else></span>
               </template>
             </el-table-column>
-            <el-table-column label="Authors" width="300">
+            <el-table-column label="Authors" width="290">
               <template #default="{ row }">
                 <span v-if="Array.isArray(row.authors)">
                   {{ row.authors.join(', ').split(' ').slice(0, 5).join(' ') }}<span v-if="row.authors.join(', ').split(' ').length > 5">...</span>
