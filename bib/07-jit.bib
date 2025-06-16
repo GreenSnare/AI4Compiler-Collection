@@ -1,0 +1,10 @@
+@inproceedings{mosaner2022machine,
+  title={Machine-Learning-Based Self-Optimizing Compiler Heuristics✱},
+  author={Mosaner, Raphael and Leopoldseder, David and Kisling, Wolfgang and Stadler, Lukas and M{\"o}ssenb{\"o}ck, Hanspeter},
+  booktitle={Proceedings of the 19th International Conference on Managed Programming Languages and Runtimes},
+  pages={98--111},
+  year={2022},
+    abstract={Compiler optimizations are often based on hand-crafted heuristics to guide the optimization process. These heuristics are designed to benefit the average program and are otherwise static or only customized by profiling information. We propose machine-learning-based self-optimizing compiler heuristics, a novel approach for fitting optimization decisions in a dynamic compiler to specific environments. This is done by updating a machine learning model with extracted performance data at run time. Related work—which primarily targets static compilers—has already shown that machine learning can outperform hand-crafted heuristics. Our approach is specifically designed for dynamic compilation and uses concepts such as deoptimization for transparently switching between generating data and performing machine learning decisions in single program runs. We implemented our approach in the GraalVM, a high-performance production VM for dynamic compilation. When evaluating our approach by replacing loop peeling heuristics with learned models we encountered speedups larger than 30% for several benchmarks and only few slowdowns of up to 7%.},
+    link = {https://dl.acm.org/doi/abs/10.1145/3546918.3546921},
+    keywords = {GraalVM},
+}
