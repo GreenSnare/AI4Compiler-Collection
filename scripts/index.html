@@ -88,7 +88,7 @@
 
           <!-- ─────── Table ─────── -->
         <el-table
-          :data="filteredPapers"
+          :data="paginatedPapers"
           stripe
           show-header
           style="width: 100%;"
@@ -186,19 +186,19 @@
 
           <el-pagination
             class="pager-center"
-            :page-size="pageSize"
-            :current-page="currentPage"
-            :total="filteredPapers.length"
-            @current-change="currentPage=$event"
-            layout="prev, pager, next">
-          </el-pagination>
+            :page-sizes="[10, 20, 50, 100]"
+            layout="sizes, prev, pager, next"
+            v-model:current-page="currentPage"
+            v-model:page-size="pageSize"
+            :total="filteredList.length"
+          />
         </el-main>
       </el-container>
     </div>
   </div>
 
   <script>
-    const { createApp, ref, computed, onMounted } = Vue;
+    const { createApp, ref, computed, onMounted, watch } = Vue;
 
     createApp({
       setup() {
@@ -210,9 +210,13 @@
         const selectedYear      = ref('');
         const selectedKeyword  = ref('');
         const sortOption        = ref('year_desc');
-        const pageSize    = 20;
+        const pageSize = ref(20);
         const currentPage = ref(1);
 
+        // Reset current page when pageSize changes
+        watch(pageSize, () => {
+          currentPage.value = 1;
+        });
         /* ───── helper maps ───── */
         const venueRules = [
           // Arch
@@ -221,7 +225,7 @@
           { pattern: /Computer-Aided Design of Integrated Circuits and Systems/i, abbr: 'TCAD', ccf: 'a'},
           { pattern: /Transactions on Computers/i, abbr: 'TC', ccf: 'a'},
           { pattern: /Transactions on Parallel and Distributed Systems/i, abbr: 'TPDS', ccf: 'a'},
-          {pattern: /Transactions on Architecture and Code Optimization/i, abbr: 'TACO', ccf: 'a'},
+          { pattern: /Transactions on Architecture and Code Optimization/i, abbr: 'TACO', ccf: 'a'},
           { pattern: /Transactions on Design Automation of Electronic Systems/i, abbr: 'TODAES', ccf: 'b'},
           { pattern: /Symposium on Principles & Practice of Parallel Programming/i, abbr: 'PPoPP', ccf: 'a'},
           { pattern: /High Performance Computer Architecture/i, abbr: 'HPCA', ccf: 'a', core: 'A*'},
@@ -247,7 +251,7 @@
           { pattern: /Symposium on Software Testing and Analysis/i, abbr: 'ISSTA', ccf: 'a', core: 'A'},
           { pattern: /Operating Systems Design and Implementation/i, abbr: 'OSDI', ccf: 'a', core: 'A*'},
           { pattern: /AAAI/i, abbr: 'AAAI', ccf: 'a', core: 'A*'},
-          { pattern: /Conference on Neural Information Processing Systems/i, abbr: 'NIPS', ccf: 'a', core: 'A*'},
+          { pattern: /Neural Information Processing Systems/i, abbr: 'NIPS', ccf: 'a', core: 'A*'},
           { pattern: /Association for Computational Linguistics/i, abbr: 'ACL', ccf: 'a', core: 'A*'},
           { pattern: /International Conference on Machine Learning/i, abbr: 'ICML', ccf: 'a', core: 'A*'},
           { pattern: /Empirical Methods in Natural Language Processing/i, abbr: 'EMNLP', ccf: 'a', core: 'A*'},
@@ -266,6 +270,7 @@
           {pattern: /Conference on Parallel Processing/i, abbr: 'ICPP', ccf: 'b', core: 'B'},
           {pattern: /Design, Automation/i, abbr: 'DATE', core: 'B', ccf: 'a'},
           {pattern: /Field Programmable Custom Computing Machines/i, abbr: 'FCCM', core: 'B', ccf: 'c'},
+          {pattern: /FCCM/i, abbr: 'FCCM', core: 'B', ccf: 'c'},
           {pattern: /International Systems and Software Product Line Conference/i, abbr: 'SPLC', core: 'B'},
           {pattern: /Genetic and Evolutionary Computation Conference/i, abbr: 'GECCO', ccf: 'c', core: 'A'},
           {pattern: /Networking, Architecture and Storage/i, abbr: 'NAS'},
@@ -338,8 +343,8 @@
         const sortField = computed(() => sortOption.value.split('_')[0]);
         const sortDir   = computed(() => sortOption.value.split('_')[1]);
 
-        /* ───── main filter + sort ───── */
-        const filteredPapers = computed(() => {
+        // 1) Fully filtered and sorted list (no pagination)
+        const filteredList = computed(() => {
           let list = papers.value;
 
           /* text search */
@@ -367,13 +372,18 @@
 
           list = list.slice().sort((a, b) => {
             if (field === 'year')     return dir * ((a.year || 0) - (b.year || 0));
-            if (field === 'source')   return dir * ( (getVenueAbbr(a.source) || a.source).localeCompare(getVenueAbbr(b.source) || b.source) );
+            if (field === 'source')   return dir * ((getVenueAbbr(a.source) || a.source).localeCompare(getVenueAbbr(b.source) || b.source));
             if (field === 'category') return dir * String(a.category || '').localeCompare(String(b.category || ''));
             return dir * String(a[field] || '').localeCompare(String(b[field] || ''));
           });
+          return list;
+        });
 
-          const start = (currentPage.value-1)*pageSize;
-          return list.slice(start, start+pageSize);
+        // 2) Slice the filtered list according to current page
+        const paginatedPapers = computed(() => {
+          const size  = pageSize.value;
+          const start = (currentPage.value - 1) * size;
+          return filteredList.value.slice(start, start + size);
         });
 
         /* ───── copy BibTeX ───── */
@@ -472,7 +482,7 @@
           selectedSource, selectedCategory, selectedYear, selectedKeyword,
           sortOption, sortOptions,
           getVenueAbbr, getVenueRating, sources, categories, years, keywords,
-          filteredPapers, copyBib,
+          filteredList, paginatedPapers, copyBib,
           currentPage, pageSize, exportCSV,
         };
       }
@@ -513,7 +523,7 @@
     }
     .el-table th .cell { white-space: nowrap; }
     .el-table .cell { white-space: normal; }
-    .pager-center { text-align:center; margin-top:16px; }
+    .pager-center { text-align:center; margin-top:16px;display: flex;justify-content: center }
 
     .custom-table {
       background-color: transparent;
