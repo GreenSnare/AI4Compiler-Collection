@@ -1,12 +1,14 @@
 # AI4Compiler-Collection
 
-![Status](https://img.shields.io/badge/status-updating-orange)
-![University](https://img.shields.io/badge/affiliation-Jiangnan%20University-blue)
+![Status](https://img.shields.io/badge/status-updating-orange)  
+![University](https://img.shields.io/badge/affiliation-Jiangnan%20University-blue)  
 ![University](https://img.shields.io/badge/affiliation-SKLP,ICT,CAS-blue)
+
+> ⚠️ If you’d like to fork this project, please use the **template** branch (via “Use this template”) to create your own copy.
 
 A curated collection of AI for Compiler research papers, covering topics like **auto-tuning**, **code optimization**, **representation learning**, and **compiler architecture**. This repository automatically converts BibTeX entries into Markdown and JSON, then generates an interactive static website with search, filtering, and visual analytics.
 
-> 🚧 This website is still under construction! We're working to collect a broad range of high-quality papers to fill current gaps.
+> 🚧 This website is still under construction! We’re working to collect a broad range of high-quality papers to fill current gaps.
 
 🔗 **Live Demo**: [https://yilingqinghan.github.io/AI4Compiler-Collection/](https://yilingqinghan.github.io/AI4Compiler-Collection/)
 
