@@ -201,3 +201,74 @@ To solve these problems, we propose a compiler pass selection and phase ordering
   keywords = {EA},
   link = {https://dl.acm.org/doi/abs/10.1145/2908961.2931696},
 }
+
+@article{Gong2025OptimizingWB,
+  title={Optimizing WebAssembly Bytecode for IoT Devices Using Deep Reinforcement Learning},
+  author={Kaijie Gong and Ruiqi Yang and Haoyu Li and Yi Gao and Wei Dong},
+  journal={ACM Transactions on Internet Technology},
+  year={2025},
+  volume={25},
+  pages={1 - 26},
+  abstract = {WebAssembly has shown promising potential on various IoT devices to achieve the desired features such as multi-language support and seamless device-cloud integration. The execution performance of WebAssembly bytecode is directly influenced by compilation sequences. While existing research has explored the optimization of compilation sequences for native code, these approaches are not suitable to WebAssembly bytecode due to its unique instruction format and control flow graph structure. In this work, we propose WasmRL, a novel efficient deep reinforcement learning (DRL)-based compiler optimization framework tailored for WebAssembly bytecode. We conduct a fine-grained analysis of the characteristics of WebAssembly instructions and associated compilation flags. We observe that the same compilation sequence may yield contrasting performance outcomes in WebAssembly and native code. Motivated by our observation, we introduce a WebAssembly-specific DRL state representation that simultaneously captures the impact of various compilation sequences on the WebAssembly bytecode and its runtime performance. To enhance the training efficiency of the DRL model, we propose a tree-based action space refinement method. Furthermore, we develop a pluggable cross-platform training strategy to optimize WebAssembly bytecode across different IoT devices. We evaluate the performance of WasmRL extensively on PolybenchC, MiBench, Shootout public datasets and real-world IoT applications. Experimental results show: (1) The DRL model trained on a specific device achieves 1.4x/1.1x speedups over -O3 for seen/unseen programs; (2) The DRL model trained on different devices simultaneously achieves 1.21x/1.06x improvements respectively. The code has been available at https://github.com/CarrollAdmin/WasmRL.},
+  keywords = {drl},
+  link={https://dl.acm.org/doi/abs/10.1145/3731451},
+}
+
+@inproceedings{zhu2023compiler,
+  title={Compiler auto-tuning via critical flag selection},
+  author={Zhu, Mingxuan and Hao, Dan},
+  booktitle={2023 38th IEEE/ACM International Conference on Automated Software Engineering (ASE)},
+  pages={1000--1011},
+  year={2023},
+  organization={IEEE}
+  keywords = {gcc},
+  abstract = {Widely used compilers like GCC usually have hundreds of optimizations controlled by optimization flags, which can be enabled or disabled during compilation to improve the runtime performance of a compiled program. Due to the large number of optimization flags and their combination, it is difficult for compiler users to tune compiler optimization flags manually. In the literature, many auto-tuning techniques have been proposed, which find a desired setting on all optimization flags (i.e., an optimization sequence) by designing different search strategies in the entire optimization space. Due to the huge search space, these techniques suffer from the widely-recognized efficiency problem. To reduce the search space, in this paper, we propose a critical-flag selection based approach CFSCA which first finds flags potentially relevant to the target program by analyzing program structure and compiler documentation, and then identifies critical flags through statistical analysis on the program's predicted runtime performance with various optimization sequences. With the reduced search space, CFSCA selects a desired optimization sequence. To evaluate the performance of the proposed approach CFSCA, we conduct an extensive experimental study on the latest version of the compiler GCC with a widely used benchmark cBench. The experimental results show that CFSCA significantly outperforms the four compared techniques, including the state-of-art technique BOCA.}
+  link = {https://ieeexplore.ieee.org/abstract/document/10298446},
+}
+
+@inproceedings{cereda2020collaborative,
+  title={A collaborative filtering approach for the automatic tuning of compiler optimisations},
+  author={Cereda, Stefano and Palermo, Gianluca and Cremonesi, Paolo and Doni, Stefano},
+  booktitle={The 21st ACM SIGPLAN/SIGBED Conference on Languages, Compilers, and Tools for Embedded Systems},
+  pages={15--25},
+  year={2020}
+  keywords = {},
+  abstract = {Selecting the right compiler optimisations has a severe impact on programs' performance. Still, the available optimisations keep increasing, and their effect depends on the specific program, making the task human intractable. Researchers proposed several techniques to search in the space of compiler optimisations. Some approaches focus on finding better search algorithms, while others try to speed up the search by leveraging previously collected knowledge. The possibility to effectively reuse previous compilation results inspired us toward the investigation of techniques derived from the Recommender Systems field. The proposed approach exploits previously collected knowledge and improves its characterisation over time. Differently from current state-of-the-art solutions, our approach is not based on performance counters but relies on Reaction Matching, an algorithm able to characterise programs looking at how they react to different optimisation sets. The proposed approach has been validated using two widely used benchmark suites, cBench and PolyBench, including 54 different programs. Our solution, on average, extracted 90% of the available performance improvement 10 iterations before current state-of-the-art solutions,which corresponds to 40% fewer compilations and performance tests to perform.},
+  link = {https://dl.acm.org/doi/abs/10.1145/3372799.3394361},
+}
+
+@inproceedings{shahzad2022reinforcement,
+  title={Reinforcement learning strategies for compiler optimization in high level synthesis},
+  author={Shahzad, Hafsah and Sanaullah, Ahmed and Arora, Sanjay and Munafo, Robert and Yao, Xiteng and Drepper, Ulrich and Herbordt, Martin},
+  booktitle={2022 IEEE/ACM Eighth Workshop on the LLVM Compiler Infrastructure in HPC (LLVM-HPC)},
+  pages={13--22},
+  year={2022},
+  organization={IEEE},
+  keywords = {ML,llvm,HLS},
+  abstract = {High Level Synthesis (HLS) offers a possible programmability solution for FPGAs by automatically compiling CPU codes to custom hardware configurations, but currently delivers far lower hardware quality than circuits written using Hardware Description Languages (HDLs). One reason is because the standard set of code optimizations used by CPU compilers, such as LLVM, are not well suited for a FPGA back end. Code performance is impacted largely by the order in which passes are applied. Similarly, it is also imperative to find a reasonable number of passes to apply and the optimum pass parameter values. In order to bridge the gap between hand tuned and automatically generated hardware, it is thus important to determine the optimal sequence of passes for HLS compilations, which could vary substantially across different workloads. Machine learning (ML) offers one popular approach to automate finding optimal compiler passes but requires selecting the right method. Supervised ML is not ideal since it requires labeled data mapping workload to optimal (or close to optimal) sequence of passes, which is computationally prohibitive. Unsupervised ML techniques don’t take into account the requirement that a quantity representing performance needs to be maximized. Reinforcement learning, which represents the problem of maximizing longterm rewards without requiring labeled data has been used for such planning problems before. While much work has been done along these lines for compilers in general, that directed towards HLS has been limited and conservative. In this paper, we address these limitations by expanding both the number of learning strategies for HLS compiler tuning and the metrics used to evaluate their impact. Our results show improvements over state-of-art for each standard benchmark evaluated and learning quality metric investigated. Choosing just the right strategy can give an improvement of 23× in learning speed, 4× in performance potential, 3×...},
+  link = {https://ieeexplore.ieee.org/abstract/document/10027131},
+
+}
+
+@inproceedings{xiao2024eatuner,
+  title={EAtuner: Comparative Study of Evolutionary Algorithms for Compiler Auto-tuning},
+  author={Xiao, Guojian and Qin, Siyuan and Li, Kuan and Chen, Juan and Yin, Jianping},
+  booktitle={2024 27th International Conference on Computer Supported Cooperative Work in Design (CSCWD)},
+  pages={419--426},
+  year={2024},
+  organization={IEEE},
+  keywords = {DE,llvm},
+  abstract = {The manual adjustment of compilation flags by compiler users is impractical due to the exponential size of the search space. To address this, machine learning-based compiler auto-tuning methods, particularly evolutionary algorithms, have been proposed. However, existing works use different benchmarks and experimental setups, making it difficult to compare the strengths and weaknesses of various algorithms. To address this, we present EAtuner, an evolutionary algorithm-based framework for compiler auto-tuning, with the goal of benchmarking and identifying suitable algorithms for compiler auto-tuning. We implement ten discrete binary evolutionary algorithms and evaluate their effectiveness on the LLVM compiler through experiments. Notably, eight of these algorithms have not been previously applied to compiler flag optimization problems before our work. The results show that all ten algorithms can effectively achieve compiler auto-tuning, resulting in an average speedup of 1.204. However, there are notable differences in the effectiveness and efficiency of each algorithm, particularly in optimization efficiency, which is positively correlated with the number of program compilations. Based on this, we classify the algorithms into three levels, with Differential Evolution (DE) showing significant advantages in optimization effectiveness and efficiency. Additionally, we provide a comprehensive summary of the applicability of compiler flags, the correlation between them, and their relationship with programs.},
+  link = {https://ieeexplore.ieee.org/abstract/document/10580120},
+}
+
+@article{chen2021efficient,
+  title={Efficient compiler autotuning via bayesian optimization. In 2021 IEEE/ACM 43rd International Conference on Software Engineering (ICSE)},
+  author={Chen, Junjie and Xu, Ningxin and Chen, Peiqi and Zhang, Hongyu},
+  journal={IEEE, 1198{\'s}1209},
+  year={2021},
+  keywords = {gcc,Bayesian},
+  abstract = {A typical compiler such as GCC supports hundreds of optimizations controlled by compilation flags for improving the runtime performance of the compiled program. Due to the large number of compilation flags and the exponential number of flag combinations, it is impossible for compiler users to manually tune these optimization flags in order to achieve the required runtime performance of the compiled programs. Over the years, many compiler autotuning approaches have been proposed to automatically tune optimization flags, but they still suffer from the efficiency problem due to the huge search space. In this paper, we propose the first Bayesian optimization based approach, called BOCA, for efficient compiler autotuning. In BOCA, we leverage a tree-based model for approximating the objective function in order to make Bayesian optimization scalable to a large number of optimization flags. Moreover, we design a novel searching strategy to improve the efficiency of Bayesian optimization by incorporating the impact of each optimization flag measured by the tree-based model and a decay function to strike a balance between exploitation and exploration. We conduct extensive experiments to investigate the effectiveness of BOCA on two most popular C compilers (i.e., GCC and LLVM) and two widely-used C benchmarks (i.e., cBench and PolyBench). The results show that BOCA significantly outperforms the state-of-the-art compiler autotuning approaches and Bayesion optimization methods in terms of the time spent on achieving specified speedups, demonstrating the effectiveness of BOCA.},
+  link = {https://ieeexplore.ieee.org/abstract/document/9401979},
+}
+
