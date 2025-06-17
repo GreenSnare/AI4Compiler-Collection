@@ -19,7 +19,29 @@
   <div class="wrapper">
     <div id="app">
       <el-container>
-        <el-header><h1>AI for Compiler Paper Collections</h1></el-header>
+        <el-header style="position: relative;">
+          <h1>AI for Compiler Paper Collections</h1>
+          <a href="https://github.com/yourusername" target="_blank" class="github-link" title="View on GitHub" style="position: absolute; top: 16px; right: 16px;">
+            <!-- GitHub SVG icon -->
+            <svg height="24" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true">
+              <path fill-rule="evenodd"
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47
+                   7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49
+                   -2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+                   -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72
+                   1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07
+                   -1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
+                   -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.68
+                   7.68 0 018 4.59c.68.003 1.36.092 2 .27 1.53-1.04
+                   2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82
+                   1.27.82 2.15 0 3.07-1.87 3.75-3.65
+                   3.95.29.25.54.73.54 1.48 0 1.07-.01
+                   1.93-.01 2.20 0 .21.15.46.55.38A8.013
+                   8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+              </path>
+            </svg>
+          </a>
+        </el-header>
 
         <el-main>
           <!-- ──── Charts (one row, 3 columns) ──── -->
@@ -88,7 +110,7 @@
 
           <!-- ─────── Table ─────── -->
         <el-table
-          :data="filteredPapers"
+          :data="paginatedPapers"
           stripe
           show-header
           style="width: 100%;"
@@ -111,7 +133,7 @@
           </el-table-column>
 
           <!-- Venue -->
-          <el-table-column prop="source" label="Venue" width="90">
+          <el-table-column prop="source" label="Venue" width="100">
             <template #default="{ row }">
               {{ getVenueAbbr(row.source) || row.source || '' }}
             </template>
@@ -167,7 +189,7 @@
                 <span v-else></span>
               </template>
             </el-table-column>
-            <el-table-column label="Authors" width="300">
+            <el-table-column label="Authors" width="290">
               <template #default="{ row }">
                 <span v-if="Array.isArray(row.authors)">
                   {{ row.authors.join(', ').split(' ').slice(0, 5).join(' ') }}<span v-if="row.authors.join(', ').split(' ').length > 5">...</span>
@@ -186,19 +208,19 @@
 
           <el-pagination
             class="pager-center"
-            :page-size="pageSize"
-            :current-page="currentPage"
-            :total="filteredPapers.length"
-            @current-change="currentPage=$event"
-            layout="prev, pager, next">
-          </el-pagination>
+            :page-sizes="[10, 20, 50, 100]"
+            layout="sizes, prev, pager, next"
+            v-model:current-page="currentPage"
+            v-model:page-size="pageSize"
+            :total="filteredList.length"
+          />
         </el-main>
       </el-container>
     </div>
   </div>
 
   <script>
-    const { createApp, ref, computed, onMounted } = Vue;
+    const { createApp, ref, computed, onMounted, watch } = Vue;
 
     createApp({
       setup() {
@@ -210,9 +232,13 @@
         const selectedYear      = ref('');
         const selectedKeyword  = ref('');
         const sortOption        = ref('year_desc');
-        const pageSize    = 20;
+        const pageSize = ref(20);
         const currentPage = ref(1);
 
+        // Reset current page when pageSize changes
+        watch(pageSize, () => {
+          currentPage.value = 1;
+        });
         /* ───── helper maps ───── */
         const venueRules = [
           // Arch
@@ -220,7 +246,8 @@
           { pattern: /Transactions on Storage/i, abbr: 'TOS', ccf: 'a'},
           { pattern: /Computer-Aided Design of Integrated Circuits and Systems/i, abbr: 'TCAD', ccf: 'a'},
           { pattern: /Transactions on Computers/i, abbr: 'TC', ccf: 'a'},
-          { pattern: /Transactions on Parallel and Distributed Systems/i, abbr: 'TACO', ccf: 'a'},
+          { pattern: /Transactions on Parallel and Distributed Systems/i, abbr: 'TPDS', ccf: 'a'},
+          { pattern: /Transactions on Architecture and Code Optimization/i, abbr: 'TACO', ccf: 'a'},
           { pattern: /Transactions on Design Automation of Electronic Systems/i, abbr: 'TODAES', ccf: 'b'},
           { pattern: /Symposium on Principles & Practice of Parallel Programming/i, abbr: 'PPoPP', ccf: 'a'},
           { pattern: /High Performance Computer Architecture/i, abbr: 'HPCA', ccf: 'a', core: 'A*'},
@@ -246,7 +273,7 @@
           { pattern: /Symposium on Software Testing and Analysis/i, abbr: 'ISSTA', ccf: 'a', core: 'A'},
           { pattern: /Operating Systems Design and Implementation/i, abbr: 'OSDI', ccf: 'a', core: 'A*'},
           { pattern: /AAAI/i, abbr: 'AAAI', ccf: 'a', core: 'A*'},
-          { pattern: /Conference on Neural Information Processing Systems/i, abbr: 'NIPS', ccf: 'a', core: 'A*'},
+          { pattern: /Neural Information Processing Systems/i, abbr: 'NIPS', ccf: 'a', core: 'A*'},
           { pattern: /Association for Computational Linguistics/i, abbr: 'ACL', ccf: 'a', core: 'A*'},
           { pattern: /International Conference on Machine Learning/i, abbr: 'ICML', ccf: 'a', core: 'A*'},
           { pattern: /Empirical Methods in Natural Language Processing/i, abbr: 'EMNLP', ccf: 'a', core: 'A*'},
@@ -259,6 +286,16 @@
           { pattern: /ACM Computing Surveys/i ,abbr: 'CSUR'},
           { pattern: /International Conference on Cybernetics, Cognition and Machine Learning Applications/i ,abbr: 'ICCCMLA'},
           { pattern: /International Conference on Computational System and Information Technology for Sustainable Solutions/i ,abbr: 'CSITSS'},
+          {pattern: /International Conference on Managed Programming Languages and Runtimes/i, abbr:'PMLR'},
+          {pattern: /Automated Software Engineering/i, abbr: 'ASE[J]', ccf: 'b'},
+          {pattern: /International Conference on INnovations in Intelligent SysTems and Application/i, abbr:'INISTA', core: 'C'},
+          {pattern: /Conference on Parallel Processing/i, abbr: 'ICPP', ccf: 'b', core: 'B'},
+          {pattern: /Design, Automation/i, abbr: 'DATE', core: 'B', ccf: 'a'},
+          {pattern: /Field Programmable Custom Computing Machines/i, abbr: 'FCCM', core: 'B', ccf: 'c'},
+          {pattern: /FCCM/i, abbr: 'FCCM', core: 'B', ccf: 'c'},
+          {pattern: /International Systems and Software Product Line Conference/i, abbr: 'SPLC', core: 'B'},
+          {pattern: /Genetic and Evolutionary Computation Conference/i, abbr: 'GECCO', ccf: 'c', core: 'A'},
+          {pattern: /Networking, Architecture and Storage/i, abbr: 'NAS'},
         ];
 
         function getVenueAbbr(src) {
@@ -328,8 +365,8 @@
         const sortField = computed(() => sortOption.value.split('_')[0]);
         const sortDir   = computed(() => sortOption.value.split('_')[1]);
 
-        /* ───── main filter + sort ───── */
-        const filteredPapers = computed(() => {
+        // 1) Fully filtered and sorted list (no pagination)
+        const filteredList = computed(() => {
           let list = papers.value;
 
           /* text search */
@@ -357,13 +394,18 @@
 
           list = list.slice().sort((a, b) => {
             if (field === 'year')     return dir * ((a.year || 0) - (b.year || 0));
-            if (field === 'source')   return dir * ( (getVenueAbbr(a.source) || a.source).localeCompare(getVenueAbbr(b.source) || b.source) );
+            if (field === 'source')   return dir * ((getVenueAbbr(a.source) || a.source).localeCompare(getVenueAbbr(b.source) || b.source));
             if (field === 'category') return dir * String(a.category || '').localeCompare(String(b.category || ''));
             return dir * String(a[field] || '').localeCompare(String(b[field] || ''));
           });
+          return list;
+        });
 
-          const start = (currentPage.value-1)*pageSize;
-          return list.slice(start, start+pageSize);
+        // 2) Slice the filtered list according to current page
+        const paginatedPapers = computed(() => {
+          const size  = pageSize.value;
+          const start = (currentPage.value - 1) * size;
+          return filteredList.value.slice(start, start + size);
         });
 
         /* ───── copy BibTeX ───── */
@@ -462,7 +504,7 @@
           selectedSource, selectedCategory, selectedYear, selectedKeyword,
           sortOption, sortOptions,
           getVenueAbbr, getVenueRating, sources, categories, years, keywords,
-          filteredPapers, copyBib,
+          filteredList, paginatedPapers, copyBib,
           currentPage, pageSize, exportCSV,
         };
       }
@@ -503,7 +545,7 @@
     }
     .el-table th .cell { white-space: nowrap; }
     .el-table .cell { white-space: normal; }
-    .pager-center { text-align:center; margin-top:16px; }
+    .pager-center { text-align:center; margin-top:16px;display: flex;justify-content: center }
 
     .custom-table {
       background-color: transparent;
@@ -561,5 +603,12 @@
     .custom-link:hover {
       color: #1e90ff;
     }
+  .github-link svg {
+    fill: #333;
+    transition: fill 0.2s ease;
+  }
+  .github-link:hover svg {
+    fill: #0366d6;
+  }
 </style>
 </html>
