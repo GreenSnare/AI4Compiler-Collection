@@ -34,3 +34,11 @@
 
 - ![year](https://img.shields.io/badge/year-2016-blue) ![src](https://img.shields.io/badge/src-PGECCC-orange) [Evolutionary optimization of compiler flag selection by learning and exploiting flags interactions](https://dl.acm.org/doi/abs/10.1145/2908961.2931696) — Garciarena, Unai and Santana, Roberto
 
+- ![year](https://img.shields.io/badge/year-2025-blue) ![src](https://img.shields.io/badge/src-ATIT-orange) [Optimizing WebAssembly Bytecode for IoT Devices Using Deep Reinforcement Learning](https://dl.acm.org/doi/abs/10.1145/3731451) — Kaijie Gong and Ruiqi Yang and Haoyu Li and Yi Gao and Wei Dong
+
+- ![year](https://img.shields.io/badge/year-2022-blue) ![src](https://img.shields.io/badge/src-LLVM-HPC-orange) [Reinforcement learning strategies for compiler optimization in high level synthesis](https://ieeexplore.ieee.org/abstract/document/10027131) — Shahzad, Hafsah and Sanaullah, Ahmed and Arora, Sanjay and Munafo, Robert and Yao, Xiteng and Drepper, Ulrich and Herbordt, Martin
+
+- ![year](https://img.shields.io/badge/year-2024-blue) ![src](https://img.shields.io/badge/src-CSCWD-orange) [EAtuner: Comparative Study of Evolutionary Algorithms for Compiler Auto-tuning](https://ieeexplore.ieee.org/abstract/document/10580120) — Xiao, Guojian and Qin, Siyuan and Li, Kuan and Chen, Juan and Yin, Jianping
+
+- ![year](https://img.shields.io/badge/year-2021-blue) ![src](https://img.shields.io/badge/src-I-orange) [Efficient compiler autotuning via bayesian optimization. In 2021 IEEE/ACM 43rd International Conference on Software Engineering (ICSE)](https://ieeexplore.ieee.org/abstract/document/9401979) — Chen, Junjie and Xu, Ningxin and Chen, Peiqi and Zhang, Hongyu
+
