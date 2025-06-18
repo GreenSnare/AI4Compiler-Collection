@@ -45,8 +45,12 @@ We welcome additions and improvements!
    ```bash
    git checkout -b patch-001
    ```
+   
+   Then add some bib contents...
 
 6. **Generate the Website Content**
+
+   When all done...
 
    ```bash
    cd scripts
@@ -74,9 +78,21 @@ We welcome additions and improvements!
 
 9. **Open a Pull Request**
 
-   Go to your GitHub fork and click **“Compare & pull request”**.
-
-   Clearly describe what paper you added or what changes you made.
+   1. Go to your fork on GitHub (`https://github.com/YOUR_USERNAME/AI4Compiler-Collection`).
+   2. Click the **Compare & pull request** button next to your branch name.
+   3. Ensure the base repository is `YOUR_USERNAME/AI4Compiler-Collection` → `main` (or `master` if used), and the head repository is your branch.
+   4. In the PR title, use a concise, descriptive format:  
+      `Add paper: <Paper Title> (Year)`.
+   5. In the PR description:
+      - Briefly explain what you added or changed.
+      - Link to the BibTeX entry and target category (e.g., `bib/code_optimization.bib`).
+      - Mention any related GitHub issues (e.g., `Fixes #123`).
+   6. Assign at least one reviewer (optional but appreciated) and add relevant labels (e.g., `enhancement`, `documentation`).
+   7. Click **Create pull request** to submit.
+   8. Wait for continuous integration (CI) checks to complete.  
+      - If CI fails (e.g., script errors), update your branch to fix issues.
+   9. Respond to any review comments by pushing additional commits to your branch.
+   10. Once approved, your PR will be merged!
 
    ---
 

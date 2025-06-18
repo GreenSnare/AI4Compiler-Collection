@@ -86,4 +86,6 @@ You’ll see the interface at http://localhost:3000 or as indicated by the serve
 
 We welcome contributions of new papers or improvements to the site.  
 
-Please follow the steps in our [Contribution Guide](CONTRIBUTING.md).
+Please follow the steps in our Contribution Guide. 
+
+[English](CONTRIBUTING.md) | [简体中文](CONTRIBUTING.zh.md)

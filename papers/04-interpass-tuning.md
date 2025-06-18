@@ -40,5 +40,3 @@
 
 - ![year](https://img.shields.io/badge/year-2024-blue) ![src](https://img.shields.io/badge/src-CSCWD-orange) [EAtuner: Comparative Study of Evolutionary Algorithms for Compiler Auto-tuning](https://ieeexplore.ieee.org/abstract/document/10580120) — Xiao, Guojian and Qin, Siyuan and Li, Kuan and Chen, Juan and Yin, Jianping
 
-- ![year](https://img.shields.io/badge/year-2021-blue) ![src](https://img.shields.io/badge/src-I-orange) [Efficient compiler autotuning via bayesian optimization. In 2021 IEEE/ACM 43rd International Conference on Software Engineering (ICSE)](https://ieeexplore.ieee.org/abstract/document/9401979) — Chen, Junjie and Xu, Ningxin and Chen, Peiqi and Zhang, Hongyu
-
