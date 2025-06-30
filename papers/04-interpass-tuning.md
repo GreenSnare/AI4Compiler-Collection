@@ -36,7 +36,13 @@
 
 - ![year](https://img.shields.io/badge/year-2025-blue) ![src](https://img.shields.io/badge/src-ATIT-orange) [Optimizing WebAssembly Bytecode for IoT Devices Using Deep Reinforcement Learning](https://dl.acm.org/doi/abs/10.1145/3731451) — Kaijie Gong and Ruiqi Yang and Haoyu Li and Yi Gao and Wei Dong
 
+- ![year](https://img.shields.io/badge/year-2023-blue) ![src](https://img.shields.io/badge/src-ASE-orange) [Compiler auto-tuning via critical flag selection](https://ieeexplore.ieee.org/abstract/document/10298446) — Zhu, Mingxuan and Hao, Dan
+
+- ![year](https://img.shields.io/badge/year-2020-blue) ![src](https://img.shields.io/badge/src-TASSCLCTES-orange) [A collaborative filtering approach for the automatic tuning of compiler optimisations](https://dl.acm.org/doi/abs/10.1145/3372799.3394361) — Cereda, Stefano and Palermo, Gianluca and Cremonesi, Paolo and Doni, Stefano
+
 - ![year](https://img.shields.io/badge/year-2022-blue) ![src](https://img.shields.io/badge/src-LLVM-HPC-orange) [Reinforcement learning strategies for compiler optimization in high level synthesis](https://ieeexplore.ieee.org/abstract/document/10027131) — Shahzad, Hafsah and Sanaullah, Ahmed and Arora, Sanjay and Munafo, Robert and Yao, Xiteng and Drepper, Ulrich and Herbordt, Martin
 
 - ![year](https://img.shields.io/badge/year-2024-blue) ![src](https://img.shields.io/badge/src-CSCWD-orange) [EAtuner: Comparative Study of Evolutionary Algorithms for Compiler Auto-tuning](https://ieeexplore.ieee.org/abstract/document/10580120) — Xiao, Guojian and Qin, Siyuan and Li, Kuan and Chen, Juan and Yin, Jianping
+
+- ![year](https://img.shields.io/badge/year-2025-blue) ![src](https://img.shields.io/badge/src-PASSICLCTES-orange) [Grouptuner: Efficient Group-Aware Compiler Auto-tuning](https://doi.org/10.1145/3735452.3735530) — Gao, Bingyu and Yao, Mengyu and Wang, Ziming and Liu, Dong and Li, Ding and Chen, Xiangqun and Guo, Yao
 

@@ -1,0 +1,10 @@
+@inproceedings{taneja2025llm,
+  title={Llm-vectorizer: Llm-based verified loop vectorizer},
+  author={Taneja, Jubi and Laird, Avery and Yan, Cong and Musuvathi, Madan and Lahiri, Shuvendu K},
+  booktitle={Proceedings of the 23rd ACM/IEEE International Symposium on Code Generation and Optimization},
+  pages={137--149},
+  year={2025},
+    link={https://dl.acm.org/doi/abs/10.1145/3696443.3708929},
+    abstract = {Vectorization is a powerful optimization technique that significantly boosts the performance of high performance computing applications operating on large data arrays. Despite decades of research on auto-vectorization, compilers frequently miss opportunities to vectorize code. On the other hand, writing vectorized code manually using compiler intrinsics is still a complex, error-prone task that demands deep knowledge of specific architecture and compilers. In this paper, we evaluate the potential of large-language models (LLMs) to generate vectorized (Single Instruction Multiple Data) code from scalar programs that process individual array elements. We propose a novel finite-state-machine multi-agents based approach that harnesses LLMs and test-based feedback to generate vectorized code. Our findings indicate that LLMs are capable of producing high-performance vectorized code with run-time speedup ranging from 1.1x to 9.4x as compared to the state-of-the-art compilers such as Intel Compiler, GCC, and Clang. To verify the correctness of vectorized code, we use Alive2, a leading bounded translation validation tool for LLVM IR. We describe a few domain-specific techniques to improve the scalability of Alive2 on our benchmark dataset. Overall, our approach is able to verify 38.2% of vectorizations as correct on the TSVC benchmark dataset.},
+    keywords = {vec,LLM,TSVC,intrinsic},
+}
