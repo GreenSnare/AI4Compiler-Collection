@@ -1,0 +1,33 @@
+@inproceedings{kasampalis2021language,
+  title={Language-parametric compiler validation with application to LLVM},
+  author={Kasampalis, Theodoros and Park, Daejun and Lin, Zhengyao and Adve, Vikram S and Ro{\c{s}}u, Grigore},
+  booktitle={Proceedings of the 26th ACM International Conference on Architectural Support for Programming Languages and Operating Systems},
+  pages={1004--1019},
+  year={2021},
+    keywords={translation,MIR,IR},
+    link = {https://dl.acm.org/doi/abs/10.1145/3445814.3446751},
+    abstract = {We propose a new design for a Translation Validation (TV) system geared towards practical use with modern optimizing compilers, such as LLVM. Unlike existing TV systems, which are custom-tailored for a particular sequence of transformations and a specific, common language for input and output programs, our design clearly separates the transformation-specific components from the rest of the system, and generalizes the transformation-independent components. Specifically, we present Keq, the first program equivalence checker that is parametric to the input and output language semantics and has no dependence on the transformation between the input and output programs. The Keq algorithm is based on a rigorous formalization, namely cut-bisimulation, and is proven correct. We have prototyped a TV system for the Instruction Selection pass of LLVM, being able to automatically prove equivalence for translations from LLVM IR to the MachineIR used in compiling to x86-64. This transformation uses different input and output languages, and as such has not been previously addressed by the state of the art. An experimental evaluation shows that Keq successfully proves correct the translation of over 90% of 4732 supported functions in GCC from SPEC 2006.},
+}
+
+@inproceedings{stepp2011equality,
+  title={Equality-based translation validator for LLVM},
+  author={Stepp, Michael and Tate, Ross and Lerner, Sorin},
+  booktitle={Computer Aided Verification: 23rd International Conference, CAV 2011, Snowbird, UT, USA, July 14-20, 2011. Proceedings 23},
+  pages={737--742},
+  year={2011},
+  organization={Springer},
+    link={https://link.springer.com/chapter/10.1007/978-3-642-22110-1_59},
+    keywords = {SPEC},
+    abstract = {We updated our Peggy tool, previously presented in [6], to perform translation validation for the LLVM compiler using a technique called Equality Saturation. We present the tool, and illustrate its effectiveness at doing translation validation on SPEC 2006 benchmarks.},
+}
+
+@inproceedings{lopes2021alive2,
+  title={Alive2: bounded translation validation for LLVM},
+  author={Lopes, Nuno P and Lee, Juneyoung and Hur, Chung-Kil and Liu, Zhengyang and Regehr, John},
+  booktitle={Proceedings of the 42nd ACM SIGPLAN International Conference on Programming Language Design and Implementation},
+  pages={65--79},
+  year={2021},
+    abstract={We designed, implemented, and deployed Alive2: a bounded translation validation tool for the LLVM compiler’s intermediate representation (IR). It limits resource consumption by, for example, unrolling loops up to some bound, which means there are circumstances in which it misses bugs. Alive2 is designed to avoid false alarms, is fully automatic through the use of an SMT solver, and requires no changes to LLVM. By running Alive2 over LLVM’s unit test suite, we discovered and reported 47 new bugs, 28 of which have been fixed already. Moreover, our work has led to eight patches to the LLVM Language Reference—the definitive description of the semantics of its IR—and we have participated in numerous discussions with the goal of clarifying ambiguities and fixing errors in these semantics. Alive2 is open source and we also made it available on the web, where it has active users from the LLVM community.},
+    keywords = {SMT,alive2},
+    link = {https://dl.acm.org/doi/abs/10.1145/3453483.3454030},
+}
