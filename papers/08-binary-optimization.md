@@ -18,9 +18,11 @@
 
 - ![year](https://img.shields.io/badge/year-2024-blue) ![src](https://img.shields.io/badge/src-CGO-orange) [Slade: A portable small language model decompiler for optimized assembly](https://ieeexplore.ieee.org/abstract/document/10444788) — Armengol-Estap{\'e}, Jordi and Woodruff, Jackson and Cummins, Chris and O'Boyle, Michael FP
 
-- ![year](https://img.shields.io/badge/year-2024-blue) ![src](https://img.shields.io/badge/src-ITDSC-orange) [Automatically mitigating vulnerabilities in binary programs via partially recompilable decompilation](https://ieeexplore.ieee.org/abstract/document/10740475) — Reiter, Pemma and Tay, Hui Jun and Weimer, Westley and Doup{\'e}, Adam and Wang, Ruoyu and Forrest, Stephanie
+- ![year](https://img.shields.io/badge/year-2019-blue) ![src](https://img.shields.io/badge/src-ASE-orange) [Dire: A neural approach to decompiled identifier naming](https://ieeexplore.ieee.org/abstract/document/8952404) — Lacomis, Jeremy and Yin, Pengcheng and Schwartz, Edward and Allamanis, Miltiadis and Le Goues, Claire and Neubig, Graham and Vasilescu, Bogdan
 
-- ![year](https://img.shields.io/badge/year-2025-blue) ![src](https://img.shields.io/badge/src-SP-orange) [PYLINGUAL: Toward Perfect Decompilation of Evolving High-Level Languages](https://ieeexplore.ieee.org/abstract/document/11023256) — Wiedemeier, Josh and Tarbet, Elliot and Zheng, Max and Ko, Sangsoo and Ouyang, Jessica and Cha, Sang Kil and Jee, Kangkook
+- ![year](https://img.shields.io/badge/year-2024-blue) ![src](https://img.shields.io/badge/src-arxiv-orange) [Enhancing Reverse Engineering: Investigating and Benchmarking Large Language Models for Vulnerability Analysis in Decompiled Binaries](https://arxiv.org/abs/2411.04981) — Manuel, Dylan and Islam, Nafis Tanveer and Khoury, Joseph and Nunez, Ana and Bou-Harb, Elias and Najafirad, Peyman
 
-- ![year](https://img.shields.io/badge/year-2023-blue) ![src](https://img.shields.io/badge/src-ITSE-orange) [Static analysis of jni programs via binary decompilation](https://ieeexplore.ieee.org/abstract/document/10035436) — Park, Jihee and Lee, Sungho and Hong, Jaemin and Ryu, Sukyoung
+- ![year](https://img.shields.io/badge/year-2023-blue) ![src](https://img.shields.io/badge/src-SANER-orange) [Extending source code pre-trained language models to summarise decompiled binaries](https://ieeexplore.ieee.org/abstract/document/10123452/) — Al-Kaswan, Ali and Ahmed, Toufique and Izadi, Maliheh and Sawant, Anand Ashok and Devanbu, Premkumar and van Deursen, Arie
+
+- ![year](https://img.shields.io/badge/year-2023-blue) ![src](https://img.shields.io/badge/src-GEM-orange) [ChatGPT as a Java Decompiler](https://aclanthology.org/2023.gem-1.19/) — McDanel, Bradley and Liu, Zhanhao
 
