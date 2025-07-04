@@ -99,3 +99,55 @@ In this work, we explore a novel approach for handling loop vectorization and pr
   keywords = {loop,slp},
   link = {https://proceedings.neurips.cc/paper/2019/hash/d1d5923fc822531bbfd9d87d4760914b-Abstract.html},
 }
+
+@article{wang2014integrating,
+  title={Integrating profile-driven parallelism detection and machine-learning-based mapping},
+  author={Wang, Zheng and Tournavitis, Georgios and Franke, Bj{\"o}rn and O'boyle, Michael FP},
+  journal={ACM Transactions on Architecture and Code Optimization (TACO)},
+  volume={11},
+  number={1},
+  pages={1--26},
+  year={2014},
+  publisher={ACM New York, NY, USA},
+  link = {https://dl.acm.org/doi/abs/10.1145/2579561},
+  abstract = {Compiler-based auto-parallelization is a much-studied area but has yet to find widespread application. This is largely due to the poor identification and exploitation of application parallelism, resulting in disappointing performance far below that which a skilled expert programmer could achieve. We have identified two weaknesses in traditional parallelizing compilers and propose a novel, integrated approach resulting in significant performance improvements of the generated parallel code. Using profile-driven parallelism detection, we overcome the limitations of static analysis, enabling the identification of more application parallelism, and only rely on the user for final approval. We then replace the traditional target-specific and inflexible mapping heuristics with a machine-learning-based prediction mechanism, resulting in better mapping decisions while automating adaptation to different target architectures. We have evaluated our parallelization strategy on the NAS and SPEC CPU2000 benchmarks and two different multicore platforms (dual quad-core Intel Xeon SMP and dual-socket QS20 Cell blade). We demonstrate that our approach not only yields significant improvements when compared with state-of-the-art parallelizing compilers but also comes close to and sometimes exceeds the performance of manually parallelized codes. On average, our methodology achieves 96% of the performance of the hand-tuned OpenMP NAS and SPEC parallel benchmarks on the Intel Xeon platform and gains a significant speedup for the IBM Cell platform, demonstrating the potential of profile-guided and machine-learning- based parallelization for complex multicore platforms.},
+  keywords = {Loop,Openmp},
+}
+
+@inproceedings{wood2021artemis,
+  title={Artemis: Automatic runtime tuning of parallel execution parameters using machine learning},
+  author={Wood, Chad and Georgakoudis, Giorgis and Beckingsale, David and Poliakoff, David and Gimenez, Alfredo and Huck, Kevin and Malony, Allen and Gamblin, Todd},
+  booktitle={High Performance Computing: 36th International Conference, ISC High Performance 2021, Virtual Event, June 24--July 2, 2021, Proceedings 36},
+  pages={453--472},
+  year={2021},
+  organization={Springer},
+  abstract = {Portable parallel programming models provide the potential for high performance and productivity, however they come with a multitude of runtime parameters that can have significant impact on execution performance. Selecting the optimal set of those parameters is non-trivial, so that HPC applications perform well in different system environments and on different input data sets, without the need of time consuming parameter exploration or major algorithmic adjustments. We present Artemis, a method for online, feedback-driven, automatic parameter tuning using machine learning that is generalizable and suitable for integration into high-performance codes. Artemis monitors execution at runtime and creates adaptive models for tuning execution parameters, while being minimally invasive in application development and runtime overhead. We demonstrate the effectiveness of Artemis by optimizing the execution times of three HPC proxy applications: Cleverleaf, LULESH, and Kokkos Kernels SpMV. Evaluation shows that Artemis selects the optimal execution policy with over 85% accuracy, has modest monitoring overhead of less than 9%, and increases execution speed by up to 47% despite its runtime overhead.},
+  link = {https://link.springer.com/chapter/10.1007/978-3-030-78713-4_24},
+  keywords = {loop},
+}
+
+@article{wu2022autotuning,
+  title={Autotuning polybench benchmarks with llvm clang/polly loop optimization pragmas using bayesian optimization},
+  author={Wu, Xingfu and Kruse, Michael and Balaprakash, Prasanna and Finkel, Hal and Hovland, Paul and Taylor, Valerie and Hall, Mary},
+  journal={Concurrency and Computation: Practice and Experience},
+  volume={34},
+  number={20},
+  pages={e6683},
+  year={2022},
+  publisher={Wiley Online Library},
+  keywords = {loop,bayes},
+  abstract = {We develop a ytopt autotuning framework that leverages Bayesian optimization to explore the parameter space search and compare four different supervised learning methods within Bayesian optimization and evaluate their effectiveness. We select six of the most complex PolyBench benchmarks and apply the newly developed LLVM Clang/Polly loop optimization pragmas to the benchmarks to optimize them. We then use the autotuning framework to optimize the pragma parameters to improve their performance. The experimental results show that our autotuning approach outperforms the other compiling methods to provide the smallest execution time for the benchmarks syr2k, 3mm, heat-3d, lu, and covariance with two large datasets in 200 code evaluations for effectively searching the parameter spaces with up to 170,368 different configurations. We find that the Floyd–Warshall benchmark did not benefit from autotuning. To cope with this issue, we provide some compiler option solutions to improve the performance. Then we present loop autotuning without a user's knowledge using a simple mctree autotuning framework to further improve the performance of the Floyd–Warshall benchmark. We also extend the ytopt autotuning framework to tune a deep learning application.},
+  link = {https://onlinelibrary.wiley.com/doi/abs/10.1002/cpe.6683},
+}
+
+@inproceedings{roy2021bliss,
+  title={Bliss: auto-tuning complex applications using a pool of diverse lightweight learning models},
+  author={Roy, Rohan Basu and Patel, Tirthak and Gadepally, Vijay and Tiwari, Devesh},
+  booktitle={Proceedings of the 42nd ACM SIGPLAN International Conference on Programming Language Design and Implementation},
+  pages={1280--1295},
+  year={2021},
+  keywords = {loop,bayes},
+  abstract = {As parallel applications become more complex, auto-tuning becomes more desirable, challenging, and time-consuming. We propose, Bliss, a novel solution for auto-tuning parallel applications without requiring apriori information about applications, domain-specific knowledge, or instrumentation. Bliss demonstrates how to leverage a pool of Bayesian Optimization models to find the near-optimal parameter setting 1.64× faster than the state-of-the-art approaches.},
+  link = {https://dl.acm.org/doi/abs/10.1145/3453483.3454109},
+}
+

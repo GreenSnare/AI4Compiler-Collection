@@ -18,3 +18,11 @@
 
 - ![year](https://img.shields.io/badge/year-2019-blue) ![src](https://img.shields.io/badge/src-ANIPS-orange) [Compiler auto-vectorization with imitation learning](https://proceedings.neurips.cc/paper/2019/hash/d1d5923fc822531bbfd9d87d4760914b-Abstract.html) — Mendis, Charith and Yang, Cambridge and Pu, Yewen and Amarasinghe, Dr Saman and Carbin, Michael
 
+- ![year](https://img.shields.io/badge/year-2014-blue) ![src](https://img.shields.io/badge/src-TACO-orange) [Integrating profile-driven parallelism detection and machine-learning-based mapping](https://dl.acm.org/doi/abs/10.1145/2579561) — Wang, Zheng and Tournavitis, Georgios and Franke, Bj{\"o}rn and O'boyle, Michael FP
+
+- ![year](https://img.shields.io/badge/year-2021-blue) ![src](https://img.shields.io/badge/src-HPCICIHPVEJJP-orange) [Artemis: Automatic runtime tuning of parallel execution parameters using machine learning](https://link.springer.com/chapter/10.1007/978-3-030-78713-4_24) — Wood, Chad and Georgakoudis, Giorgis and Beckingsale, David and Poliakoff, David and Gimenez, Alfredo and Huck, Kevin and Malony, Allen and Gamblin, Todd
+
+- ![year](https://img.shields.io/badge/year-2022-blue) ![src](https://img.shields.io/badge/src-CCPE-orange) [Autotuning polybench benchmarks with llvm clang/polly loop optimization pragmas using bayesian optimization](https://onlinelibrary.wiley.com/doi/abs/10.1002/cpe.6683) — Wu, Xingfu and Kruse, Michael and Balaprakash, Prasanna and Finkel, Hal and Hovland, Paul and Taylor, Valerie and Hall, Mary
+
+- ![year](https://img.shields.io/badge/year-2021-blue) ![src](https://img.shields.io/badge/src-PASICPLDI-orange) [Bliss: auto-tuning complex applications using a pool of diverse lightweight learning models](https://dl.acm.org/doi/abs/10.1145/3453483.3454109) — Roy, Rohan Basu and Patel, Tirthak and Gadepally, Vijay and Tiwari, Devesh
+

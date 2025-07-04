@@ -1,0 +1,9 @@
+@article{rotem2021profile,
+  title={Profile guided optimization without profiles: A machine learning approach},
+  author={Rotem, Nadav and Cummins, Chris},
+  journal={arXiv preprint arXiv:2112.14679},
+  year={2021},
+    link={https://arxiv.org/abs/2112.14679},
+    abstract = {Profile guided optimization is an effective technique for improving the optimization ability of compilers based on dynamic behavior, but collecting profile data is expensive, cumbersome, and requires regular updating to remain fresh. We present a novel statistical approach to inferring branch probabilities that improves the performance of programs that are compiled without profile guided optimizations. We perform offline training using information that is collected from a large corpus of binaries that have branch probabilities information. The learned model is used by the compiler to predict the branch probabilities of regular uninstrumented programs, which the compiler can then use to inform optimization decisions. We integrate our technique directly in LLVM, supplementing the existing human-engineered compiler heuristics. We evaluate our technique on a suite of benchmarks, demonstrating some gains over compiling without profile information. In deployment, our technique requires no profiling runs and has negligible effect on compilation time.},
+    keywords = {PGO},
+}

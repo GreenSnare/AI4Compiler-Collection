@@ -46,3 +46,5 @@
 
 - ![year](https://img.shields.io/badge/year-2025-blue) ![src](https://img.shields.io/badge/src-PASSICLCTES-orange) [Grouptuner: Efficient Group-Aware Compiler Auto-tuning](https://doi.org/10.1145/3735452.3735530) — Gao, Bingyu and Yao, Mengyu and Wang, Ziming and Liu, Dong and Li, Ding and Chen, Xiangqun and Guo, Yao
 
+- ![year](https://img.shields.io/badge/year-2014-blue) ![src](https://img.shields.io/badge/src-PP-orange) [Opentuner: An extensible framework for program autotuning](https://dl.acm.org/doi/abs/10.1145/2628071.2628092) — Ansel, Jason and Kamil, Shoaib and Veeramachaneni, Kalyan and Ragan-Kelley, Jonathan and Bosboom, Jeffrey and O'Reilly, Una-May and Amarasinghe, Saman
+
