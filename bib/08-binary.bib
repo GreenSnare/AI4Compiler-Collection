@@ -145,3 +145,51 @@
   abstract = {We propose a novel approach using instruction-tuned large language models (LLMs), such as ChatGPT, to automatically decompile entire Java classes. Our method relies only on a textual representation of the Java bytecode and corresponding unit tests generated from the bytecode. While no additional domain knowledge or fine-tuning is performed, we provide a single training example of this decompilation process in the model’s prompt. To overcome both compilation errors and test failures, we use an iterative prompting approach. We find that ChatGPT-4 is able to generate more human-readable output than existing software-based decompilers while achieving slightly lower pass rates on unit tests. Source code and datasets are available at https://github.com/BradMcDanel/gpt-java-decompiler.},
 }
 
+@inproceedings{chen2022augmenting,
+  title={Augmenting decompiler output with learned variable names and types},
+  author={Chen, Qibin and Lacomis, Jeremy and Schwartz, Edward J and Le Goues, Claire and Neubig, Graham and Vasilescu, Bogdan},
+  booktitle={31st USENIX Security Symposium (USENIX Security 22)},
+  pages={4327--4343},
+  year={2022},
+  link = {https://www.usenix.org/conference/usenixsecurity22/presentation/chen-qibin},
+  abstract = {A common tool used by security professionals for reverse-engineering binaries found in the wild is the decompiler. A decompiler attempts to reverse compilation, transforming a binary to a higher-level language such as C. High-level languages ease reasoning about programs by providing useful abstractions such as loops, typed variables, and comments, but these abstractions are lost during compilation. Decompilers are able to deterministically reconstruct structural properties of code, but comments, variable names, and custom variable types are technically impossible to recover. In this paper we present DIRTY (DecompIled variable ReTYper), a novel technique for improving the quality of decompiler output that automatically generates meaningful variable names and types. DIRTY is built on a Transformer-based neural network model and is trained on code automatically scraped from repositories on GitHub. DIRTY uses this model to postprocesses decompiled files, recommending variable types and names given their context. Empirical evaluation on a novel dataset of C code mined from GitHub shows that DIRTY outperforms prior work approaches by a sizable margin, recovering the original names written by developers 66.4% of the time and the original types 75.8% of the time.},
+  keywords = {},
+}
+
+@inproceedings{pal2024len,
+  title={" Len or index or count, anything but v1": Predicting Variable Names in Decompilation Output with Transfer Learning},
+  author={Pal, Kuntal Kumar and Bajaj, Ati Priya and Banerjee, Pratyay and Dutcher, Audrey and Nakamura, Mutsumi and Basque, Zion Leonahenahe and Gupta, Himanshu and Sawant, Saurabh Arjun and Anantheswaran, Ujjwala and Shoshitaishvili, Yan and others},
+  booktitle={2024 IEEE Symposium on Security and Privacy (SP)},
+  pages={4069--4087},
+  year={2024},
+  organization={IEEE},
+  abstract = {Binary reverse engineering is an arduous and tedious task performed by skilled and expensive human analysts. Information about the source code is irrevocably lost in the compilation process. While modern decompilers attempt to generate C-style source code from a binary, they cannot recover lost variable names. Prior works have explored machine learning techniques for predicting variable names in decompiled code. However, the state-of-the-art systems, DIRE and DIRTY, generalize poorly to functions in the testing set that are not included in the training set—31.8% for DIRE on DIRTY’s data set and 36.9% for DIRTY on DIRTY’s data set.In this paper, we present VarBERT, a Bidirectional Encoder Representations from Transformers (BERT) to predict meaningful variable names in decompilation output. An advantage of VarBERT is that we can pre-train on human source code and then fine-tune the model to the task of predicting variable names. We also create a new data set VarCorpus, which significantly expands the size and variety of the data set. Our evaluation of VarBERT on VarCorpus, demonstrates a significant improvement in predicting the developer’s original variable names for O2 optimized binaries achieving accuracies of 54.43% for IDA and 54.49% for Ghidra. VarBERT is strictly better than state-of-the-art techniques: On a subset of VarCorpus, VarBERT could predict the developer’s original variable names 50.70% of the time, while DIRE and DIRTY predicted original variable names 35.94% and 38.00% of the time, respectively.},
+  link = {https://ieeexplore.ieee.org/abstract/document/10646727},
+  keywords = {Bert},
+}
+
+@article{david2020neural,
+  title={Neural reverse engineering of stripped binaries using augmented control flow graphs},
+  author={David, Yaniv and Alon, Uri and Yahav, Eran},
+  journal={Proceedings of the ACM on Programming Languages},
+  volume={4},
+  number={OOPSLA},
+  pages={1--28},
+  year={2020},
+  publisher={ACM New York, NY, USA},
+  link = {https://dl.acm.org/doi/abs/10.1145/3428293},
+  abstract = {We address the problem of reverse engineering of stripped executables, which contain no debug information. This is a challenging problem because of the low amount of syntactic information available in stripped executables, and the diverse assembly code patterns arising from compiler optimizations. We present a novel approach for predicting procedure names in stripped executables. Our approach combines static analysis with neural models. The main idea is to use static analysis to obtain augmented representations of call sites; encode the structure of these call sites using the control-flow graph (CFG) and finally, generate a target name while attending to these call sites. We use our representation to drive graph-based, LSTM-based and Transformer-based architectures. Our evaluation shows that our models produce predictions that are difficult and time consuming for humans, while improving on existing methods by 28% and by 100% over state-of-the-art neural textual models that do not use any static analysis. Code and data for this evaluation are available at https://github.com/tech-srl/Nero.},
+  keywords = {LSTM},
+}
+
+@inproceedings{gao2021lightweight,
+  title={A lightweight framework for function name reassignment based on large-scale stripped binaries},
+  author={Gao, Han and Cheng, Shaoyin and Xue, Yinxing and Zhang, Weiming},
+  booktitle={Proceedings of the 30th ACM SIGSOFT International Symposium on Software Testing and Analysis},
+  pages={607--619},
+  year={2021},
+  link = {https://dl.acm.org/doi/abs/10.1145/3460319.3464804},
+  abstract = {Software in the wild is usually released as stripped binaries that contain no debug information (e.g., function names). This paper studies the issue of reassigning descriptive names for functions to help facilitate reverse engineering. Since the essence of this issue is a data-driven prediction task, persuasive research should be based on sufficiently large-scale and diverse data. However, prior studies can only be based on small-scale datasets because their techniques suffer from heavyweight binary analysis, making them powerless in the face of big-size and large-scale binaries. This paper presents the Neural Function Rename Engine (NFRE), a lightweight framework for function name reassignment that utilizes both sequential and structural information of assembly code. NFRE uses fine-grained and easily acquired features to model assembly code, making it more effective and efficient than existing techniques. In addition, we construct a large-scale dataset and present two data-preprocessing approaches to help improve its usability. Benefiting from the lightweight design, NFRE can be efficiently trained on the large-scale dataset, thereby having better generalization capability for unknown functions. The comparative experiments show that NFRE outperforms two existing techniques by a relative improvement of 32% and 16%, respectively, while the time cost for binary analysis is much less.},
+  keywords = {},
+}
+

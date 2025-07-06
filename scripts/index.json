@@ -678,7 +678,7 @@
     "authors": "Li, Zongjie and Ma, Pingchuan and Wang, Huaijin and Wang, Shuai and Tang, Qiyi and Nie, Sen and Wu, Shi",
     "year": "2022",
     "source": "Proceedings of the 44th International Conference on Software Engineering",
-    "category": "representation-learning",
+    "category": "embedding",
     "keywords": [
       "GA",
       "embedding"
@@ -693,7 +693,7 @@
     "authors": "Dutta, Akash and Jannesari, Ali",
     "year": "2024",
     "source": "Proceedings of the 2024 International Conference on Parallel Architectures and Compilation Techniques",
-    "category": "representation-learning",
+    "category": "embedding",
     "keywords": [
       "multi-modal",
       "IR"
@@ -708,7 +708,7 @@
     "authors": "Ben-Nun, Tal and Jakobovits, Alice Shoshana and Hoefler, Torsten",
     "year": "2018",
     "source": "Advances in neural information processing systems",
-    "category": "representation-learning",
+    "category": "embedding",
     "keywords": [
       "inst2vec",
       "IR"
@@ -723,7 +723,7 @@
     "authors": "Brauckmann, Alexander and Goens, Andr{\\'e}s and Ertel, Sebastian and Castrillon, Jeronimo",
     "year": "2020",
     "source": "Proceedings of the 29th International Conference on Compiler Construction",
-    "category": "representation-learning",
+    "category": "embedding",
     "keywords": [
       "RNN",
       "AST"
@@ -738,7 +738,7 @@
     "authors": "VenkataKeerthy, S and Aggarwal, Rohit and Jain, Shalini and Desarkar, Maunendra Sankar and Upadrasta, Ramakrishna and Srikant, YN",
     "year": "2020",
     "source": "ACM Transactions on Architecture and Code Optimization (TACO)",
-    "category": "representation-learning",
+    "category": "embedding",
     "keywords": [
       "IR"
     ],
@@ -752,7 +752,7 @@
     "authors": "Alon, Uri and Zilberstein, Meital and Levy, Omer and Yahav, Eran",
     "year": "2019",
     "source": "Proceedings of the ACM on Programming Languages",
-    "category": "representation-learning",
+    "category": "embedding",
     "keywords": [
       "code2vec"
     ],
@@ -766,7 +766,7 @@
     "authors": "Dutta, Akash and Alcaraz, Jordi and TehraniJamsaz, Ali and Cesar, Eduardo and Sikora, Anna and Jannesari, Ali",
     "year": "2023",
     "source": "Proceedings of the 32nd International Symposium on High-Performance Parallel and Distributed Computing",
-    "category": "representation-learning",
+    "category": "embedding",
     "keywords": [
       "GNN"
     ],
@@ -780,7 +780,7 @@
     "authors": "Dutta, Akash and Alcaraz, Jordi and TehraniJamsaz, Ali and Sikora, Anna and Cesar, Eduardo and Jannesari, Ali",
     "year": "2022",
     "source": "2022 IEEE/ACM International Workshop on Artificial Intelligence and Machine Learning for Scientific Applications (AI4S)",
-    "category": "representation-learning",
+    "category": "embedding",
     "keywords": [
       "Openmp",
       "GNN"
@@ -795,7 +795,7 @@
     "authors": "TehraniJamsaz, Ali and Mahmud, Quazi Ishtiaque and Chen, Le and Ahmed, Nesreen K and Jannesari, Ali",
     "year": "2023",
     "source": "Advances in Neural Information Processing Systems",
-    "category": "representation-learning",
+    "category": "embedding",
     "keywords": [],
     "abstract": "The remarkable growth and significant success of machine learning have expanded its applications into programming languages and program analysis. However, a key challenge in adopting the latest machine learning methods is the representation of programming languages which has a direct impact on the ability of machine learning methods to reason about programs. The absence of numerical awareness, aggregate data structure information, and improper way of presenting variables in previous representation works have limited their performances. To overcome the limitations and challenges of current program representations, we propose a novel graph-based program representation called PERFOGRAPH. PERFOGRAPH can capture numerical information and the aggregate data structure by introducing new nodes and edges. Furthermore, we propose an adapted embedding method to incorporate numerical awareness.These enhancements make PERFOGRAPH a highly flexible and scalable representation that can effectively capture programs' intricate dependencies and semantics. Consequently, it serves as a powerful tool for various applications such as program analysis, performance optimization, and parallelism discovery. Our experimental results demonstrate that PERFOGRAPH outperforms existing representations and sets new state-of-the-art results by reducing the error rate by 7.4% (AMD dataset) and 10% (NVIDIA dataset) in the well-known Device Mapping challenge. It also sets new state-of-the-art results in various performance optimization tasks like Parallelism Discovery and Numa and Prefetchers Configuration prediction.",
     "bibtex": "@article{tehranijamsaz2023perfograph,\n abstract = {The remarkable growth and significant success of machine learning have expanded its applications into programming languages and program analysis. However, a key challenge in adopting the latest machine learning methods is the representation of programming languages which has a direct impact on the ability of machine learning methods to reason about programs. The absence of numerical awareness, aggregate data structure information, and improper way of presenting variables in previous representation works have limited their performances. To overcome the limitations and challenges of current program representations, we propose a novel graph-based program representation called PERFOGRAPH. PERFOGRAPH can capture numerical information and the aggregate data structure by introducing new nodes and edges. Furthermore, we propose an adapted embedding method to incorporate numerical awareness.These enhancements make PERFOGRAPH a highly flexible and scalable representation that can effectively capture programs' intricate dependencies and semantics. Consequently, it serves as a powerful tool for various applications such as program analysis, performance optimization, and parallelism discovery. Our experimental results demonstrate that PERFOGRAPH outperforms existing representations and sets new state-of-the-art results by reducing the error rate by 7.4% (AMD dataset) and 10% (NVIDIA dataset) in the well-known Device Mapping challenge. It also sets new state-of-the-art results in various performance optimization tasks like Parallelism Discovery and Numa and Prefetchers Configuration prediction.},\n author = {TehraniJamsaz, Ali and Mahmud, Quazi Ishtiaque and Chen, Le and Ahmed, Nesreen K and Jannesari, Ali},\n journal = {Advances in Neural Information Processing Systems},\n keywords = {},\n link = {https://proceedings.neurips.cc/paper_files/paper/2023/hash/b41907dd4df5c60f86216b73fe0c7465-Abstract-Conference.html},\n pages = {57783--57794},\n title = {Perfograph: A numerical aware program graph representation for performance optimization and program analysis},\n volume = {36},\n year = {2023}\n}\n",
@@ -852,7 +852,7 @@
     "authors": "Fang, Weike and Zhou, Zhejian and He, Junzhou and Wang, Weihang",
     "year": "2024",
     "source": "arXiv preprint arXiv:2406.04568",
-    "category": "binary-optimization",
+    "category": "binary",
     "keywords": [
       "webassembly",
       "CoT",
@@ -868,7 +868,7 @@
     "authors": "Cao, Ying and Liang, Ruigang and Chen, Kai and Hu, Peiwei",
     "year": "2022",
     "source": "proceedings of the 38th annual computer security applications conference",
-    "category": "binary-optimization",
+    "category": "binary",
     "keywords": [
       "GNN"
     ],
@@ -882,7 +882,7 @@
     "authors": "She, Xinyu and Zhao, Yanjie and Wang, Haoyu",
     "year": "2024",
     "source": "Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering",
-    "category": "binary-optimization",
+    "category": "binary",
     "keywords": [
       "WebAssembly",
       "LLM"
@@ -897,7 +897,7 @@
     "authors": "Huang, Hanxian and Zhao, Jishen",
     "year": "2024",
     "source": "Proceedings of the 33rd ACM SIGSOFT International Symposium on Software Testing and Analysis",
-    "category": "binary-optimization",
+    "category": "binary",
     "keywords": [
       "WebAssembly"
     ],
@@ -911,7 +911,7 @@
     "authors": "Wong, Wai Kin and Wu, Daoyuan and Wang, Huaijin and Li, Zongjie and Liu, Zhibo and Wang, Shuai and Tang, Qiyi and Nie, Sen and Wu, Shi",
     "year": "2025",
     "source": "Proceedings of the ACM on Software Engineering",
-    "category": "binary-optimization",
+    "category": "binary",
     "keywords": [
       "LLM"
     ],
@@ -925,7 +925,7 @@
     "authors": "Cao, Ying and Zhang, Runze and Liang, Ruigang and Chen, Kai",
     "year": "2024",
     "source": "Proceedings of the 33rd ACM SIGSOFT International Symposium on Software Testing and Analysis",
-    "category": "binary-optimization",
+    "category": "binary",
     "keywords": [
       "decompiler"
     ],
@@ -939,7 +939,7 @@
     "authors": "Hu, Peiwei and Liang, Ruigang and Chen, Kai",
     "year": "2024",
     "source": "Proceedings 2024 Network and Distributed System Security Symposium",
-    "category": "binary-optimization",
+    "category": "binary",
     "keywords": [
       "LLM"
     ],
@@ -953,7 +953,7 @@
     "authors": "Tan, Hanzhuo and Luo, Qi and Li, Jing and Zhang, Yuqun",
     "year": "2024",
     "source": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
-    "category": "binary-optimization",
+    "category": "binary",
     "keywords": [
       "LLM"
     ],
@@ -967,7 +967,7 @@
     "authors": "Armengol-Estap{\\'e}, Jordi and Woodruff, Jackson and Cummins, Chris and O'Boyle, Michael FP",
     "year": "2024",
     "source": "2024 IEEE/ACM International Symposium on Code Generation and Optimization (CGO)",
-    "category": "binary-optimization",
+    "category": "binary",
     "keywords": [],
     "abstract": "Decompilation is a well-studied area with numerous high-quality tools available. These are frequently used for security tasks and to port legacy code. However, they regularly generate difficult-to-read programs and require a large amount of engineering effort to support new programming languages and ISAs. Recent interest in neural approaches has produced portable tools that generate readable code. Nevertheless, to-date such techniques are usually restricted to synthetic programs without optimization, and no models have evaluated their portability. Furthermore, while the code generated may be more readable, it is usually incorrect. This paper presents SLaDe, a Small Language model Decompiler based on a sequence-to-sequence Transformer trained over real-world code and augmented with a type inference engine. We utilize a novel tokenizer, dropout-free regularization, and type inference to generate programs that are more readable and accurate than standard analytic and recent neural approaches. Unlike standard approaches, SLaDe can infer out-of-context types and unlike neural approaches, it generates correct code. We evaluate SLaDe on over 4,000 ExeBench functions on two ISAs and at two optimization levels. SLaDe is up to 6× more accurate than Ghidra, a state-of-the-art, industrial-strength decompiler and up to 4× more accurate than the large language model ChatGPT and generates significantly more readable code than both.",
     "bibtex": "@inproceedings{armengol2024slade,\n abstract = {Decompilation is a well-studied area with numerous high-quality tools available. These are frequently used for security tasks and to port legacy code. However, they regularly generate difficult-to-read programs and require a large amount of engineering effort to support new programming languages and ISAs. Recent interest in neural approaches has produced portable tools that generate readable code. Nevertheless, to-date such techniques are usually restricted to synthetic programs without optimization, and no models have evaluated their portability. Furthermore, while the code generated may be more readable, it is usually incorrect. This paper presents SLaDe, a Small Language model Decompiler based on a sequence-to-sequence Transformer trained over real-world code and augmented with a type inference engine. We utilize a novel tokenizer, dropout-free regularization, and type inference to generate programs that are more readable and accurate than standard analytic and recent neural approaches. Unlike standard approaches, SLaDe can infer out-of-context types and unlike neural approaches, it generates correct code. We evaluate SLaDe on over 4,000 ExeBench functions on two ISAs and at two optimization levels. SLaDe is up to 6× more accurate than Ghidra, a state-of-the-art, industrial-strength decompiler and up to 4× more accurate than the large language model ChatGPT and generates significantly more readable code than both.},\n author = {Armengol-Estap{\\'e}, Jordi and Woodruff, Jackson and Cummins, Chris and O'Boyle, Michael FP},\n booktitle = {2024 IEEE/ACM International Symposium on Code Generation and Optimization (CGO)},\n keywords = {},\n link = {https://ieeexplore.ieee.org/abstract/document/10444788},\n organization = {IEEE},\n pages = {67--80},\n title = {Slade: A portable small language model decompiler for optimized assembly},\n year = {2024}\n}\n",
@@ -979,7 +979,7 @@
     "authors": "Lacomis, Jeremy and Yin, Pengcheng and Schwartz, Edward and Allamanis, Miltiadis and Le Goues, Claire and Neubig, Graham and Vasilescu, Bogdan",
     "year": "2019",
     "source": "2019 34th IEEE/ACM International Conference on Automated Software Engineering (ASE)",
-    "category": "binary-optimization",
+    "category": "binary",
     "keywords": [],
     "abstract": "The decompiler is one of the most common tools for examining binaries without corresponding source code. It transforms binaries into high-level code, reversing the compilation process. Decompilers can reconstruct much of the information that is lost during the compilation process (e.g., structure and type information). Unfortunately, they do not reconstruct semantically meaningful variable names, which are known to increase code understandability. We propose the Decompiled Identifier Renaming Engine (DIRE), a novel probabilistic technique for variable name recovery that uses both lexical and structural information recovered by the decompiler. We also present a technique for generating corpora suitable for training and evaluating models of decompiled code renaming, which we use to create a corpus of 164,632 unique x86-64 binaries generated from C projects mined from GitHub. Our results show that on this corpus DIRE can predict variable names identical to the names in the original source code up to 74.3% of the time.",
     "bibtex": "@inproceedings{lacomis2019dire,\n abstract = {The decompiler is one of the most common tools for examining binaries without corresponding source code. It transforms binaries into high-level code, reversing the compilation process. Decompilers can reconstruct much of the information that is lost during the compilation process (e.g., structure and type information). Unfortunately, they do not reconstruct semantically meaningful variable names, which are known to increase code understandability. We propose the Decompiled Identifier Renaming Engine (DIRE), a novel probabilistic technique for variable name recovery that uses both lexical and structural information recovered by the decompiler. We also present a technique for generating corpora suitable for training and evaluating models of decompiled code renaming, which we use to create a corpus of 164,632 unique x86-64 binaries generated from C projects mined from GitHub. Our results show that on this corpus DIRE can predict variable names identical to the names in the original source code up to 74.3% of the time.},\n author = {Lacomis, Jeremy and Yin, Pengcheng and Schwartz, Edward and Allamanis, Miltiadis and Le Goues, Claire and Neubig, Graham and Vasilescu, Bogdan},\n booktitle = {2019 34th IEEE/ACM International Conference on Automated Software Engineering (ASE)},\n keywords = {},\n link = {https://ieeexplore.ieee.org/abstract/document/8952404},\n organization = {IEEE},\n pages = {628--639},\n title = {Dire: A neural approach to decompiled identifier naming},\n year = {2019}\n}\n",
@@ -991,7 +991,7 @@
     "authors": "Manuel, Dylan and Islam, Nafis Tanveer and Khoury, Joseph and Nunez, Ana and Bou-Harb, Elias and Najafirad, Peyman",
     "year": "2024",
     "source": "arXiv preprint arXiv:2411.04981",
-    "category": "binary-optimization",
+    "category": "binary",
     "keywords": [
       "LLM"
     ],
@@ -1005,7 +1005,7 @@
     "authors": "Al-Kaswan, Ali and Ahmed, Toufique and Izadi, Maliheh and Sawant, Anand Ashok and Devanbu, Premkumar and van Deursen, Arie",
     "year": "2023",
     "source": "2023 IEEE International Conference on Software Analysis, Evolution and Reengineering (SANER)",
-    "category": "binary-optimization",
+    "category": "binary",
     "keywords": [
       "LLM"
     ],
@@ -1019,7 +1019,7 @@
     "authors": "McDanel, Bradley and Liu, Zhanhao",
     "year": "2023",
     "source": "Proceedings of the Third Workshop on Natural Language Generation, Evaluation, and Metrics (GEM)",
-    "category": "binary-optimization",
+    "category": "binary",
     "keywords": [
       "LLM",
       "Java"
@@ -1027,6 +1027,58 @@
     "abstract": "We propose a novel approach using instruction-tuned large language models (LLMs), such as ChatGPT, to automatically decompile entire Java classes. Our method relies only on a textual representation of the Java bytecode and corresponding unit tests generated from the bytecode. While no additional domain knowledge or fine-tuning is performed, we provide a single training example of this decompilation process in the model’s prompt. To overcome both compilation errors and test failures, we use an iterative prompting approach. We find that ChatGPT-4 is able to generate more human-readable output than existing software-based decompilers while achieving slightly lower pass rates on unit tests. Source code and datasets are available at https://github.com/BradMcDanel/gpt-java-decompiler.",
     "bibtex": "@inproceedings{mcdanel2023chatgpt,\n abstract = {We propose a novel approach using instruction-tuned large language models (LLMs), such as ChatGPT, to automatically decompile entire Java classes. Our method relies only on a textual representation of the Java bytecode and corresponding unit tests generated from the bytecode. While no additional domain knowledge or fine-tuning is performed, we provide a single training example of this decompilation process in the model’s prompt. To overcome both compilation errors and test failures, we use an iterative prompting approach. We find that ChatGPT-4 is able to generate more human-readable output than existing software-based decompilers while achieving slightly lower pass rates on unit tests. Source code and datasets are available at https://github.com/BradMcDanel/gpt-java-decompiler.},\n author = {McDanel, Bradley and Liu, Zhanhao},\n booktitle = {Proceedings of the Third Workshop on Natural Language Generation, Evaluation, and Metrics (GEM)},\n keywords = {LLM,Java},\n link = {https://aclanthology.org/2023.gem-1.19/},\n pages = {224--232},\n title = {ChatGPT as a Java Decompiler},\n year = {2023}\n}\n",
     "link": "https://aclanthology.org/2023.gem-1.19/"
+  },
+  {
+    "id": "chen2022augmenting",
+    "title": "Augmenting decompiler output with learned variable names and types",
+    "authors": "Chen, Qibin and Lacomis, Jeremy and Schwartz, Edward J and Le Goues, Claire and Neubig, Graham and Vasilescu, Bogdan",
+    "year": "2022",
+    "source": "31st USENIX Security Symposium (USENIX Security 22)",
+    "category": "binary",
+    "keywords": [],
+    "abstract": "A common tool used by security professionals for reverse-engineering binaries found in the wild is the decompiler. A decompiler attempts to reverse compilation, transforming a binary to a higher-level language such as C. High-level languages ease reasoning about programs by providing useful abstractions such as loops, typed variables, and comments, but these abstractions are lost during compilation. Decompilers are able to deterministically reconstruct structural properties of code, but comments, variable names, and custom variable types are technically impossible to recover. In this paper we present DIRTY (DecompIled variable ReTYper), a novel technique for improving the quality of decompiler output that automatically generates meaningful variable names and types. DIRTY is built on a Transformer-based neural network model and is trained on code automatically scraped from repositories on GitHub. DIRTY uses this model to postprocesses decompiled files, recommending variable types and names given their context. Empirical evaluation on a novel dataset of C code mined from GitHub shows that DIRTY outperforms prior work approaches by a sizable margin, recovering the original names written by developers 66.4% of the time and the original types 75.8% of the time.",
+    "bibtex": "@inproceedings{chen2022augmenting,\n abstract = {A common tool used by security professionals for reverse-engineering binaries found in the wild is the decompiler. A decompiler attempts to reverse compilation, transforming a binary to a higher-level language such as C. High-level languages ease reasoning about programs by providing useful abstractions such as loops, typed variables, and comments, but these abstractions are lost during compilation. Decompilers are able to deterministically reconstruct structural properties of code, but comments, variable names, and custom variable types are technically impossible to recover. In this paper we present DIRTY (DecompIled variable ReTYper), a novel technique for improving the quality of decompiler output that automatically generates meaningful variable names and types. DIRTY is built on a Transformer-based neural network model and is trained on code automatically scraped from repositories on GitHub. DIRTY uses this model to postprocesses decompiled files, recommending variable types and names given their context. Empirical evaluation on a novel dataset of C code mined from GitHub shows that DIRTY outperforms prior work approaches by a sizable margin, recovering the original names written by developers 66.4% of the time and the original types 75.8% of the time.},\n author = {Chen, Qibin and Lacomis, Jeremy and Schwartz, Edward J and Le Goues, Claire and Neubig, Graham and Vasilescu, Bogdan},\n booktitle = {31st USENIX Security Symposium (USENIX Security 22)},\n keywords = {},\n link = {https://www.usenix.org/conference/usenixsecurity22/presentation/chen-qibin},\n pages = {4327--4343},\n title = {Augmenting decompiler output with learned variable names and types},\n year = {2022}\n}\n",
+    "link": "https://www.usenix.org/conference/usenixsecurity22/presentation/chen-qibin"
+  },
+  {
+    "id": "pal2024len",
+    "title": "\" Len or index or count, anything but v1\": Predicting Variable Names in Decompilation Output with Transfer Learning",
+    "authors": "Pal, Kuntal Kumar and Bajaj, Ati Priya and Banerjee, Pratyay and Dutcher, Audrey and Nakamura, Mutsumi and Basque, Zion Leonahenahe and Gupta, Himanshu and Sawant, Saurabh Arjun and Anantheswaran, Ujjwala and Shoshitaishvili, Yan and others",
+    "year": "2024",
+    "source": "2024 IEEE Symposium on Security and Privacy (SP)",
+    "category": "binary",
+    "keywords": [
+      "Bert"
+    ],
+    "abstract": "Binary reverse engineering is an arduous and tedious task performed by skilled and expensive human analysts. Information about the source code is irrevocably lost in the compilation process. While modern decompilers attempt to generate C-style source code from a binary, they cannot recover lost variable names. Prior works have explored machine learning techniques for predicting variable names in decompiled code. However, the state-of-the-art systems, DIRE and DIRTY, generalize poorly to functions in the testing set that are not included in the training set—31.8% for DIRE on DIRTY’s data set and 36.9% for DIRTY on DIRTY’s data set.In this paper, we present VarBERT, a Bidirectional Encoder Representations from Transformers (BERT) to predict meaningful variable names in decompilation output. An advantage of VarBERT is that we can pre-train on human source code and then fine-tune the model to the task of predicting variable names. We also create a new data set VarCorpus, which significantly expands the size and variety of the data set. Our evaluation of VarBERT on VarCorpus, demonstrates a significant improvement in predicting the developer’s original variable names for O2 optimized binaries achieving accuracies of 54.43% for IDA and 54.49% for Ghidra. VarBERT is strictly better than state-of-the-art techniques: On a subset of VarCorpus, VarBERT could predict the developer’s original variable names 50.70% of the time, while DIRE and DIRTY predicted original variable names 35.94% and 38.00% of the time, respectively.",
+    "bibtex": "@inproceedings{pal2024len,\n abstract = {Binary reverse engineering is an arduous and tedious task performed by skilled and expensive human analysts. Information about the source code is irrevocably lost in the compilation process. While modern decompilers attempt to generate C-style source code from a binary, they cannot recover lost variable names. Prior works have explored machine learning techniques for predicting variable names in decompiled code. However, the state-of-the-art systems, DIRE and DIRTY, generalize poorly to functions in the testing set that are not included in the training set—31.8% for DIRE on DIRTY’s data set and 36.9% for DIRTY on DIRTY’s data set.In this paper, we present VarBERT, a Bidirectional Encoder Representations from Transformers (BERT) to predict meaningful variable names in decompilation output. An advantage of VarBERT is that we can pre-train on human source code and then fine-tune the model to the task of predicting variable names. We also create a new data set VarCorpus, which significantly expands the size and variety of the data set. Our evaluation of VarBERT on VarCorpus, demonstrates a significant improvement in predicting the developer’s original variable names for O2 optimized binaries achieving accuracies of 54.43% for IDA and 54.49% for Ghidra. VarBERT is strictly better than state-of-the-art techniques: On a subset of VarCorpus, VarBERT could predict the developer’s original variable names 50.70% of the time, while DIRE and DIRTY predicted original variable names 35.94% and 38.00% of the time, respectively.},\n author = {Pal, Kuntal Kumar and Bajaj, Ati Priya and Banerjee, Pratyay and Dutcher, Audrey and Nakamura, Mutsumi and Basque, Zion Leonahenahe and Gupta, Himanshu and Sawant, Saurabh Arjun and Anantheswaran, Ujjwala and Shoshitaishvili, Yan and others},\n booktitle = {2024 IEEE Symposium on Security and Privacy (SP)},\n keywords = {Bert},\n link = {https://ieeexplore.ieee.org/abstract/document/10646727},\n organization = {IEEE},\n pages = {4069--4087},\n title = {\" Len or index or count, anything but v1\": Predicting Variable Names in Decompilation Output with Transfer Learning},\n year = {2024}\n}\n",
+    "link": "https://ieeexplore.ieee.org/abstract/document/10646727"
+  },
+  {
+    "id": "david2020neural",
+    "title": "Neural reverse engineering of stripped binaries using augmented control flow graphs",
+    "authors": "David, Yaniv and Alon, Uri and Yahav, Eran",
+    "year": "2020",
+    "source": "Proceedings of the ACM on Programming Languages",
+    "category": "binary",
+    "keywords": [
+      "LSTM"
+    ],
+    "abstract": "We address the problem of reverse engineering of stripped executables, which contain no debug information. This is a challenging problem because of the low amount of syntactic information available in stripped executables, and the diverse assembly code patterns arising from compiler optimizations. We present a novel approach for predicting procedure names in stripped executables. Our approach combines static analysis with neural models. The main idea is to use static analysis to obtain augmented representations of call sites; encode the structure of these call sites using the control-flow graph (CFG) and finally, generate a target name while attending to these call sites. We use our representation to drive graph-based, LSTM-based and Transformer-based architectures. Our evaluation shows that our models produce predictions that are difficult and time consuming for humans, while improving on existing methods by 28% and by 100% over state-of-the-art neural textual models that do not use any static analysis. Code and data for this evaluation are available at https://github.com/tech-srl/Nero.",
+    "bibtex": "@article{david2020neural,\n abstract = {We address the problem of reverse engineering of stripped executables, which contain no debug information. This is a challenging problem because of the low amount of syntactic information available in stripped executables, and the diverse assembly code patterns arising from compiler optimizations. We present a novel approach for predicting procedure names in stripped executables. Our approach combines static analysis with neural models. The main idea is to use static analysis to obtain augmented representations of call sites; encode the structure of these call sites using the control-flow graph (CFG) and finally, generate a target name while attending to these call sites. We use our representation to drive graph-based, LSTM-based and Transformer-based architectures. Our evaluation shows that our models produce predictions that are difficult and time consuming for humans, while improving on existing methods by 28% and by 100% over state-of-the-art neural textual models that do not use any static analysis. Code and data for this evaluation are available at https://github.com/tech-srl/Nero.},\n author = {David, Yaniv and Alon, Uri and Yahav, Eran},\n journal = {Proceedings of the ACM on Programming Languages},\n keywords = {LSTM},\n link = {https://dl.acm.org/doi/abs/10.1145/3428293},\n number = {OOPSLA},\n pages = {1--28},\n publisher = {ACM New York, NY, USA},\n title = {Neural reverse engineering of stripped binaries using augmented control flow graphs},\n volume = {4},\n year = {2020}\n}\n",
+    "link": "https://dl.acm.org/doi/abs/10.1145/3428293"
+  },
+  {
+    "id": "gao2021lightweight",
+    "title": "A lightweight framework for function name reassignment based on large-scale stripped binaries",
+    "authors": "Gao, Han and Cheng, Shaoyin and Xue, Yinxing and Zhang, Weiming",
+    "year": "2021",
+    "source": "Proceedings of the 30th ACM SIGSOFT International Symposium on Software Testing and Analysis",
+    "category": "binary",
+    "keywords": [],
+    "abstract": "Software in the wild is usually released as stripped binaries that contain no debug information (e.g., function names). This paper studies the issue of reassigning descriptive names for functions to help facilitate reverse engineering. Since the essence of this issue is a data-driven prediction task, persuasive research should be based on sufficiently large-scale and diverse data. However, prior studies can only be based on small-scale datasets because their techniques suffer from heavyweight binary analysis, making them powerless in the face of big-size and large-scale binaries. This paper presents the Neural Function Rename Engine (NFRE), a lightweight framework for function name reassignment that utilizes both sequential and structural information of assembly code. NFRE uses fine-grained and easily acquired features to model assembly code, making it more effective and efficient than existing techniques. In addition, we construct a large-scale dataset and present two data-preprocessing approaches to help improve its usability. Benefiting from the lightweight design, NFRE can be efficiently trained on the large-scale dataset, thereby having better generalization capability for unknown functions. The comparative experiments show that NFRE outperforms two existing techniques by a relative improvement of 32% and 16%, respectively, while the time cost for binary analysis is much less.",
+    "bibtex": "@inproceedings{gao2021lightweight,\n abstract = {Software in the wild is usually released as stripped binaries that contain no debug information (e.g., function names). This paper studies the issue of reassigning descriptive names for functions to help facilitate reverse engineering. Since the essence of this issue is a data-driven prediction task, persuasive research should be based on sufficiently large-scale and diverse data. However, prior studies can only be based on small-scale datasets because their techniques suffer from heavyweight binary analysis, making them powerless in the face of big-size and large-scale binaries. This paper presents the Neural Function Rename Engine (NFRE), a lightweight framework for function name reassignment that utilizes both sequential and structural information of assembly code. NFRE uses fine-grained and easily acquired features to model assembly code, making it more effective and efficient than existing techniques. In addition, we construct a large-scale dataset and present two data-preprocessing approaches to help improve its usability. Benefiting from the lightweight design, NFRE can be efficiently trained on the large-scale dataset, thereby having better generalization capability for unknown functions. The comparative experiments show that NFRE outperforms two existing techniques by a relative improvement of 32% and 16%, respectively, while the time cost for binary analysis is much less.},\n author = {Gao, Han and Cheng, Shaoyin and Xue, Yinxing and Zhang, Weiming},\n booktitle = {Proceedings of the 30th ACM SIGSOFT International Symposium on Software Testing and Analysis},\n keywords = {},\n link = {https://dl.acm.org/doi/abs/10.1145/3460319.3464804},\n pages = {607--619},\n title = {A lightweight framework for function name reassignment based on large-scale stripped binaries},\n year = {2021}\n}\n",
+    "link": "https://dl.acm.org/doi/abs/10.1145/3460319.3464804"
   },
   {
     "id": "taneja2025llm",
