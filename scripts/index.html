@@ -113,10 +113,21 @@
           :data="paginatedPapers"
           stripe
           show-header
-          style="width: 100%;"
+          style="width: 110%;"
           class="custom-table"
           :row-key="row => row.title"
         >
+          <!-- 全局序号列 -->
+          <el-table-column label="No." width="50" align="center" header-align="center">
+            <template #default="{ $index }">
+              {{ ($index + 1) + (currentPage - 1) * pageSize }}
+            </template>
+          </el-table-column>
+          <el-table-column
+            label="#"
+            type="index"
+            width="50"
+          />
           <el-table-column type="expand">
             <template #default="{ row }">
               <transition name="fade-slide">
@@ -128,12 +139,12 @@
             </template>
           </el-table-column>
           <!-- Year -->
-          <el-table-column prop="year" label="Year" width="60">
+          <el-table-column prop="year" label="Year" width="60" align="center" header-align="center">
             <template #default="{ row }">{{ row.year ?? '' }}</template>
           </el-table-column>
 
           <!-- Venue -->
-          <el-table-column prop="source" label="Venue" width="100">
+          <el-table-column prop="source" label="Venue" width="100" align="center" header-align="center">
             <template #default="{ row }">
               {{ getVenueAbbr(row.source) || row.source || '' }}
             </template>
@@ -158,7 +169,7 @@
                 </el-space>
               </template>
             </el-table-column>
-            <el-table-column prop="title" label="Title" width="420">
+            <el-table-column prop="title" label="Title" width="575">
               <template #default="{ row }">
                 <a
                   :href="row.link || '#'"
@@ -548,7 +559,7 @@
 
     .wrapper {
       width: 90%;
-      width: 1400px;
+      width: 1600px;
       margin: 0 auto;
     }
 
