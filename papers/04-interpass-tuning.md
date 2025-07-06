@@ -6,7 +6,7 @@
 
 - ![year](https://img.shields.io/badge/year-2023-blue) ![src](https://img.shields.io/badge/src-ICML-orange) [Learning compiler pass orders using coreset and normalized value prediction](https://proceedings.mlr.press/v202/liang23f.html) — Liang, Youwei and Stone, Kevin and Shameli, Ali and Cummins, Chris and Elhoushi, Mostafa and Guo, Jiadong and Steiner, Benoit and Yang, Xiaomeng and Xie, Pengtao and Leather, Hugh James and others
 
-- ![year](https://img.shields.io/badge/year-2022-blue) ![src](https://img.shields.io/badge/src-E-orange) [Compiler optimization parameter selection method based on ensemble learning]() — Liu, Hui and Xu, Jinlong and Chen, Sen and Guo, Te
+- ![year](https://img.shields.io/badge/year-2022-blue) ![src](https://img.shields.io/badge/src-E-orange) [Compiler optimization parameter selection method based on ensemble learning](https://www.mdpi.com/2079-9292/11/15/2452) — Liu, Hui and Xu, Jinlong and Chen, Sen and Guo, Te
 
 - ![year](https://img.shields.io/badge/year-2024-blue) ![src](https://img.shields.io/badge/src-ATSEM-orange) [Compiler autotuning through multiple-phase learning](https://dl.acm.org/doi/abs/10.1145/3640330) — Zhu, Mingxuan and Hao, Dan and Chen, Junjie
 
