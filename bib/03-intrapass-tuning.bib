@@ -151,3 +151,21 @@ In this work, we explore a novel approach for handling loop vectorization and pr
   link = {https://dl.acm.org/doi/abs/10.1145/3453483.3454109},
 }
 
+@inproceedings{zhang2021dynatune,
+  title={DynaTune: Dynamic tensor program optimization in deep neural network compilation},
+  author={Zhang, Minjia and Li, Menghao and Wang, Chi and Li, Mingqin},
+  booktitle={International Conference on Learning Representations},
+  year={2021},
+  keywords = {RL,DNN},
+  abstract = {Recently, the DL compiler, together with Learning to Compile has proven to be a powerful technique for optimizing deep learning models. However, existing methods focus on accelerating the convergence speed of the individual tensor operator rather than the convergence speed of the entire model, which results in long optimization time to obtain a desired latency. In this paper, we present a new method called DynaTune, which provides significantly faster convergence speed to optimize a DNN model. In particular, we consider a Multi-Armed Bandit (MAB) model for the tensor program optimization problem. We use UCB to handle the decision-making of time-slot-based optimization, and we devise a Bayesian belief model that allows predicting the potential performance gain of each operator with uncertainty quantification, which guides the optimization process. We evaluate and compare DynaTune with the state-of-the-art DL compiler. The experiment results show that DynaTune is 1.2-2.4 times faster to achieve the same optimization quality for a range of models across different hardware architectures.},
+  link = {https://experts.illinois.edu/en/publications/dynatune-dynamic-tensor-program-optimization-in-deep-neural-netwo},
+}
+
+@article{singh2024llm,
+  title={An llm-tool compiler for fused parallel function calling},
+  author={Singh, Simranjit and Karatzas, Andreas and Fore, Michael and Anagnostopoulos, Iraklis and Stamoulis, Dimitrios},
+  journal={arXiv preprint arXiv:2405.17438},
+  year={2024},
+  link = {https://arxiv.org/abs/2405.17438},
+  abstract = {State-of-the-art sequential reasoning in Large Language Models (LLMs) has expanded the capabilities of Copilots beyond conversational tasks to complex function calling, managing thousands of API calls. However, the tendency of compositional prompting to segment tasks into multiple steps, each requiring a round-trip to the GPT APIs, leads to increased system latency and costs. Although recent advancements in parallel function calling have improved tool execution per API call, they may necessitate more detailed in-context instructions and task breakdown at the prompt level, resulting in higher engineering and production costs. Inspired by the hardware design principles of multiply-add (MAD) operations, which fuse multiple arithmetic operations into a single task from the compiler's perspective, we propose LLM-Tool Compiler, which selectively fuses similar types of tool operations under a single function at runtime, presenting them as a unified task to the LLM. This selective fusion inherently enhances parallelization and efficiency. Benchmarked on a large-scale Copilot platform, LLM-Tool Compiler achieves up to four times more parallel calls than existing methods, reducing token costs and latency by up to 40% and 12%, respectively.},
+}

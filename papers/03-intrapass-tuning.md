@@ -26,3 +26,7 @@
 
 - ![year](https://img.shields.io/badge/year-2021-blue) ![src](https://img.shields.io/badge/src-PASICPLDI-orange) [Bliss: auto-tuning complex applications using a pool of diverse lightweight learning models](https://dl.acm.org/doi/abs/10.1145/3453483.3454109) — Roy, Rohan Basu and Patel, Tirthak and Gadepally, Vijay and Tiwari, Devesh
 
+- ![year](https://img.shields.io/badge/year-2021-blue) ![src](https://img.shields.io/badge/src-ICLR-orange) [DynaTune: Dynamic tensor program optimization in deep neural network compilation](https://experts.illinois.edu/en/publications/dynatune-dynamic-tensor-program-optimization-in-deep-neural-netwo) — Zhang, Minjia and Li, Menghao and Wang, Chi and Li, Mingqin
+
+- ![year](https://img.shields.io/badge/year-2024-blue) ![src](https://img.shields.io/badge/src-arxiv-orange) [An llm-tool compiler for fused parallel function calling](https://arxiv.org/abs/2405.17438) — Singh, Simranjit and Karatzas, Andreas and Fore, Michael and Anagnostopoulos, Iraklis and Stamoulis, Dimitrios
+

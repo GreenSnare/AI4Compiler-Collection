@@ -48,3 +48,17 @@
 
 - ![year](https://img.shields.io/badge/year-2014-blue) ![src](https://img.shields.io/badge/src-PP-orange) [Opentuner: An extensible framework for program autotuning](https://dl.acm.org/doi/abs/10.1145/2628071.2628092) — Ansel, Jason and Kamil, Shoaib and Veeramachaneni, Kalyan and Ragan-Kelley, Jonathan and Bosboom, Jeffrey and O'Reilly, Una-May and Amarasinghe, Saman
 
+- ![year](https://img.shields.io/badge/year-2012-blue) ![src](https://img.shields.io/badge/src-TACO-orange) [Deconstructing iterative optimization](https://dl.acm.org/doi/abs/10.1145/2355585.2355594) — Chen, Yang and Fang, Shuangde and Huang, Yuanjie and Eeckhout, Lieven and Fursin, Grigori and Temam, Olivier and Wu, Chengyong
+
+- ![year](https://img.shields.io/badge/year-2004-blue) ![src](https://img.shields.io/badge/src-ASN-orange) [Finding effective compilation sequences](https://dl.acm.org/doi/abs/10.1145/998300.997196) — Almagor, Lelac and Cooper, Keith D and Grosul, Alexander and Harvey, Timothy J and Reeves, Steven W and Subramanian, Devika and Torczon, Linda and Waterman, Todd
+
+- ![year](https://img.shields.io/badge/year-2008-blue) ![src](https://img.shields.io/badge/src-PIAC-orange) [Cole: compiler optimization level exploration](https://dl.acm.org/doi/abs/10.1145/1356058.1356080) — Hoste, Kenneth and Eeckhout, Lieven
+
+- ![year](https://img.shields.io/badge/year-2019-blue) ![src](https://img.shields.io/badge/src-JS-orange) [Evolutionary algorithm for optimization of energy consumption at GCC compile time based on frequent pattern mining](https://www.jos.org.cn/josen/article/abstract/5734) — 倪友聪 and 吴瑞 and 杜欣 and 叶鹏 and 李汪彪 and 肖如良
+
+- ![year](https://img.shields.io/badge/year-2012-blue) ![src](https://img.shields.io/badge/src-SocProS%202011-orange) [An optimized tuning of genetic algorithm parameters in compiler flag selection based on compilation and execution duration](https://link.springer.com/chapter/10.1007/978-81-322-0491-6_55) — Sandran, Thayalan and Zakaria, Nordin and Pal, Anindya Jyoti
+
+- ![year](https://img.shields.io/badge/year-2018-blue) ![src](https://img.shields.io/badge/src-AEICEAEPFORSP-orange) [Automatic configuration of GCC using irace](https://link.springer.com/chapter/10.1007/978-3-319-78133-4_15) — P{\'e}rez C{\'a}ceres, Leslie and Pagnozzi, Federico and Franzin, Alberto and St{\"u}tzle, Thomas
+
+- ![year](https://img.shields.io/badge/year-2006-blue) ![src](https://img.shields.io/badge/src-CGO%2706-orange) [Using machine learning to focus iterative optimization](https://ieeexplore.ieee.org/abstract/document/1611549/) — Agakov, Felix and Bonilla, Edwin and Cavazos, John and Franke, Bj{\"o}rn and Fursin, Grigori and O'Boyle, Michael FP and Thomson, John and Toussaint, Marc and Williams, Christopher KI
+
