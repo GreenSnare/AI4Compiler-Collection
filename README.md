@@ -1,4 +1,4 @@
-# AI4Compiler-Collection
+# AI4CodeGen-and-Optimization Collection
 
 ![Status](https://img.shields.io/badge/status-updating-orange)  
 ![University](https://img.shields.io/badge/affiliation-Jiangnan%20University-blue)  
@@ -10,7 +10,7 @@ A curated collection of AI for Compiler research papers, covering topics like **
 
 > 🚧 This website is still under construction! We’re working to collect a broad range of high-quality papers to fill current gaps.
 
-🔗 **Live Demo**: [https://yilingqinghan.github.io/AI4Compiler-Collection/](https://yilingqinghan.github.io/AI4Compiler-Collection/)
+🔗 **Live Demo**: [AI4CodeGen-and-Optimization-in-Compiler](https://github.com/yilingqinghan/AI4CodeGen-and-Optimization-in-Compiler)
 
 ---
 

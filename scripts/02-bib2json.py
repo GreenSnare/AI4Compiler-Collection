@@ -25,7 +25,7 @@ import bibtexparser
 def derive_category(bib_file: pathlib.Path) -> str:
     """
     Derive a category name from the BibTeX file stem by removing leading digits and hyphens.
-    Example: '01-survey.bib' -> 'survey'
+    Example: '01-survey&classical.bib' -> 'survey'
     """
     stem = bib_file.stem
     # Remove leading numeric prefix and hyphens
