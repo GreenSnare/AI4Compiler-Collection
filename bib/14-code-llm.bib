@@ -27,3 +27,26 @@
     link = {https://arxiv.org/abs/2409.12186},
     keywords = {LLM},
 }
+
+@inproceedings{fei2024extending,
+  title={Extending Context Window of Large Language Models via Semantic Compression},
+  author={Fei, Weizhi and Niu, Xueyan and Zhou, Pingyi and Hou, Lu and Bai, Bo and Deng, Lei and Han, Wei},
+  booktitle={Findings of the Association for Computational Linguistics ACL 2024},
+  pages={5169--5181},
+  year={2024},
+abstract = {Transformer-based Large Language Models (LLMs) often impose limitations on the length of the text input to ensure the generation of fluent and relevant responses. This constraint restricts their applicability in scenarios involving long texts. We propose a novel semantic compression method that enables generalization to texts that are 6-8 times longer, without incurring significant computational costs or requiring fine-tuning. Our proposed framework draws inspiration from source coding in information theory and employs a pre-trained model to reduce the semantic redundancy of long inputs before passing them to the LLMs for downstream tasks. Experimental results demonstrate that our method effectively extends the context window of LLMs across a range of tasks including question answering, summarization, few-shot learning, and information retrieval. Furthermore, the proposed semantic compression method exhibits consistent fluency in text generation while reducing the associated computational overhead.},
+    keywords = {LLM,longContext},
+    link = {https://aclanthology.org/2024.findings-acl.306/},
+}
+
+@inproceedings{guo2023longcoder,
+  title={Longcoder: A long-range pre-trained language model for code completion},
+  author={Guo, Daya and Xu, Canwen and Duan, Nan and Yin, Jian and McAuley, Julian},
+  booktitle={International Conference on Machine Learning},
+  pages={12098--12107},
+  year={2023},
+  organization={PMLR},
+    link={https://proceedings.mlr.press/v202/guo23j.html},
+    abstract = {In this paper, we introduce a new task for code completion that focuses on handling long code input and propose a sparse Transformer model, called LongCoder, to address this task. LongCoder employs a sliding window mechanism for self-attention and introduces two types of globally accessible tokens - bridge tokens and memory tokens - to improve performance and efficiency. Bridge tokens are inserted throughout the input sequence to aggregate local information and facilitate global interaction, while memory tokens are included to highlight important statements that may be invoked later and need to be memorized, such as package imports and definitions of classes, functions, or structures. We conduct experiments on a newly constructed dataset that contains longer code context and the publicly available CodeXGLUE benchmark. Experimental results demonstrate that LongCoder achieves superior performance on code completion tasks compared to previous models while maintaining comparable efficiency in terms of computational resources during inference.},
+    keywords = {longContext},
+}
