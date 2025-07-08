@@ -326,7 +326,7 @@
           {pattern: /Machine Learning for Scientific Applications/i, abbr: 'AI4S'},
           {pattern: /International Conference on Performance Engineering/i, abbr: 'ICPE'},
           {pattern: /International Parallel and Distributed Processing Symposium/i, abbr: 'IPDPSW'},
-
+          {pattern: /Soft Computing for Problem Solving/i, abbr: 'SocProS'},
         ];
 
         function getVenueAbbr(src) {
@@ -439,9 +439,13 @@
           return filteredList.value.slice(start, start + size);
         });
 
-        /* ───── copy BibTeX ───── */
+        /* ───── copy BibTeX (strip abstract field) ───── */
         const copyBib = bib => {
-          navigator.clipboard.writeText(bib).then(() => ElMessage.success('BibTeX copied to clipboard'));
+          // Remove the abstract field from the BibTeX entry (including leading comma and whitespace)
+          const cleaned = bib.replace(/,\s*abstract\s*=\s*\\?\{[^]*?\\?\}/i, '');
+          navigator.clipboard.writeText(cleaned)
+            .then(() => ElMessage.success('BibTeX copied to clipboard'))
+            .catch(() => ElMessage.error('Failed to copy BibTeX'));
         };
 
         /* ───── render charts ───── */
