@@ -30,3 +30,13 @@
 
 - ![year](https://img.shields.io/badge/year-2024-blue) ![src](https://img.shields.io/badge/src-arxiv-orange) [An llm-tool compiler for fused parallel function calling](https://arxiv.org/abs/2405.17438) — Singh, Simranjit and Karatzas, Andreas and Fore, Michael and Anagnostopoulos, Iraklis and Stamoulis, Dimitrios
 
+- ![year](https://img.shields.io/badge/year-2005-blue) ![src](https://img.shields.io/badge/src-I-orange) [Predicting unroll factors using supervised classification](https://ieeexplore.ieee.org/abstract/document/1402082) — Stephenson, Mark and Amarasinghe, Saman
+
+- ![year](https://img.shields.io/badge/year-1997-blue) ![src](https://img.shields.io/badge/src-ANIPS-orange) [Learning to schedule straight-line code](https://proceedings.neurips.cc/paper/1997/hash/bcc0d400288793e8bdcd7c19a8ac0c2b-Abstract.html) — Moss, J and Utgoff, Paul and Cavazos, John and Precup, Doina and Stefanovic, Darko and Brodley, Carla and Scheeff, David
+
+- ![year](https://img.shields.io/badge/year-2006-blue) ![src](https://img.shields.io/badge/src-ASN-orange) [Method-specific dynamic compilation using logistic regression](https://dl.acm.org/doi/abs/10.1145/1167515.1167492) — Cavazos, John and O'boyle, Michael FP
+
+- ![year](https://img.shields.io/badge/year-2014-blue) ![src](https://img.shields.io/badge/src-TACO-orange) [Automatic feature generation for machine learning--based optimising compilation](https://dl.acm.org/doi/abs/10.1145/2536688) — Leather, Hugh and Bonilla, Edwin and O'boyle, Michael
+
+- ![year](https://img.shields.io/badge/year-1997-blue) ![src](https://img.shields.io/badge/src-TOPLAS-orange) [Evidence-based static branch prediction using machine learning](https://dl.acm.org/doi/abs/10.1145/239912.239923) — Calder, Brad and Grunwald, Dirk and Jones, Michael and Lindsay, Donald and Martin, James and Mozer, Michael and Zorn, Benjamin
+

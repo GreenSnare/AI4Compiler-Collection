@@ -7,3 +7,27 @@
     abstract = {Profile guided optimization is an effective technique for improving the optimization ability of compilers based on dynamic behavior, but collecting profile data is expensive, cumbersome, and requires regular updating to remain fresh. We present a novel statistical approach to inferring branch probabilities that improves the performance of programs that are compiled without profile guided optimizations. We perform offline training using information that is collected from a large corpus of binaries that have branch probabilities information. The learned model is used by the compiler to predict the branch probabilities of regular uninstrumented programs, which the compiler can then use to inform optimization decisions. We integrate our technique directly in LLVM, supplementing the existing human-engineered compiler heuristics. We evaluate our technique on a suite of benchmarks, demonstrating some gains over compiling without profile information. In deployment, our technique requires no profiling runs and has negligible effect on compilation time.},
     keywords = {PGO},
 }
+
+@inproceedings{mendis2019ithemal,
+  title={Ithemal: Accurate, portable and fast basic block throughput estimation using deep neural networks},
+  author={Mendis, Charith and Renda, Alex and Amarasinghe, Saman and Carbin, Michael},
+  booktitle={International Conference on machine learning},
+  pages={4505--4515},
+  year={2019},
+  organization={PMLR},
+  link = {https://proceedings.mlr.press/v97/mendis19a.html},
+  abstract = {Predicting the number of clock cycles a processor takes to execute a block of assembly instructions in steady state (the throughput) is important for both compiler designers and performance engineers. Building an analytical model to do so is especially complicated in modern x86-64 Complex Instruction Set Computer (CISC) machines with sophisticated processor microarchitectures in that it is tedious, error prone, and must be performed from scratch for each processor generation. In this paper we present Ithemal, the first tool which learns to predict the throughput of a set of instructions. Ithemal uses a hierarchical LSTM–based approach to predict throughput based on the opcodes and operands of instructions in a basic block. We show that Ithemal is more accurate than state-of-the-art hand-written tools currently used in compiler backends and static machine code analyzers. In particular, our model has less than half the error of state-of-the-art analytical models (LLVM’s llvm-mca and Intel’s IACA). Ithemal is also able to predict these throughput values just as fast as the aforementioned tools, and is easily ported across a variety of processor microarchitectures with minimal developer effort.},
+  keywords = {DNN},
+}
+
+@article{steiner2021value,
+  title={Value learning for throughput optimization of deep learning workloads},
+  author={Steiner, Benoit and Cummins, Chris and He, Horace and Leather, Hugh},
+  journal={Proceedings of Machine Learning and Systems},
+  volume={3},
+  pages={323--334},
+  year={2021},
+  link = {https://proceedings.mlsys.org/paper_files/paper/2021/hash/a7e5da037a0afc90fa84386586929a26-Abstract.html},
+  keywords = {DNN},
+  abstract = {As the usage of machine learning techniques is becoming ubiquitous, the efficient execution of deep learning models is crucial to many applications. Frameworks such as Halide or TVM separate the algorithmic representation of the neural network from the schedule that determines its implementation. Finding good schedules, however, remains extremely challenging. Autotuning methods, which search the space of valid schedules and execute each candidate on the hardware, identify some of the best performing schedules, but the search can take hours, hampering the productivity of deep learning practitioners. What is needed is a method that achieves a similar performance without extensive search, delivering the needed efficiency quickly. We model the scheduling process as a sequence of optimization choices, and present a new technique to accurately predict the expected performance of a partial schedule using a LSTM over carefully engineered features that describe each DNN operator and their current scheduling choices. Leveraging these predictions we are able to make these optimization decisions greedily, and without any executions on the target hardware, quickly identify an efficient schedule. Our evaluation shows that our performance predictions are one order of magnitude more accurate than the state of the art. This enables us to find schedules that improve the execution performance of deep neural networks by 1.5x or more over the best autoschedulers. Moreover, our technique is two to three orders of magnitude faster than these tools, and completes in seconds instead of hours.},
+}
