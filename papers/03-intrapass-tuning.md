@@ -40,3 +40,7 @@
 
 - ![year](https://img.shields.io/badge/year-1997-blue) ![src](https://img.shields.io/badge/src-TOPLAS-orange) [Evidence-based static branch prediction using machine learning](https://dl.acm.org/doi/abs/10.1145/239912.239923) — Calder, Brad and Grunwald, Dirk and Jones, Michael and Lindsay, Donald and Martin, James and Mozer, Michael and Zorn, Benjamin
 
+- ![year](https://img.shields.io/badge/year-2013-blue) ![src](https://img.shields.io/badge/src-CGO-orange) [Automatic construction of inlining heuristics using machine learning](https://ieeexplore.ieee.org/abstract/document/6495004/) — Kulkarni, Sameer and Cavazos, John and Wimmer, Christian and Simon, Douglas
+
+- ![year](https://img.shields.io/badge/year-2005-blue) ![src](https://img.shields.io/badge/src-SPAICS-orange) [Automatic tuning of inlining heuristics](https://ieeexplore.ieee.org/abstract/document/1559966) — Cavazos, John and O'Boyle, Michael FP
+

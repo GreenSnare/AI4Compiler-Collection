@@ -62,3 +62,5 @@
 
 - ![year](https://img.shields.io/badge/year-2006-blue) ![src](https://img.shields.io/badge/src-CGO%2706-orange) [Using machine learning to focus iterative optimization](https://ieeexplore.ieee.org/abstract/document/1611549/) — Agakov, Felix and Bonilla, Edwin and Cavazos, John and Franke, Bj{\"o}rn and Fursin, Grigori and O'Boyle, Michael FP and Thomson, John and Toussaint, Marc and Williams, Christopher KI
 
+- ![year](https://img.shields.io/badge/year-2003-blue) ![src](https://img.shields.io/badge/src-A-orange) [Meta optimization: Improving compiler heuristics with machine learning](https://dl.acm.org/doi/abs/10.1145/780822.781141) — Stephenson, Mark and Amarasinghe, Saman and Martin, Martin and O'Reilly, Una-May
+
