@@ -1,6 +1,6 @@
 # superopt
 
-- ![year](https://img.shields.io/badge/year-2013-blue) ![src](https://img.shields.io/badge/src-ASCAN-orange) [Stochastic superoptimization](https://dl.acm.org/doi/10.1145/2451116.2451150) — Schkufza, Eric and Sharma, Rahul and Aiken, Alex
+- ![year](https://img.shields.io/badge/year-2013-blue) ![src](https://img.shields.io/badge/src-PA-orange) [Stochastic superoptimization](https://dl.acm.org/doi/10.1145/2451116.2451150) — Schkufza, Eric and Sharma, Rahul and Aiken, Alex
 
 - ![year](https://img.shields.io/badge/year-2014-blue) ![src](https://img.shields.io/badge/src-ASN-orange) [Stochastic optimization of floating-point programs with tunable precision](https://dl.acm.org/doi/abs/10.1145/2666356.2594302) — Schkufza, Eric and Sharma, Rahul and Aiken, Alex
 
