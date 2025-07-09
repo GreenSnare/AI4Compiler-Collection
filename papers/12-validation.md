@@ -6,3 +6,5 @@
 
 - ![year](https://img.shields.io/badge/year-2021-blue) ![src](https://img.shields.io/badge/src-PASICPLDI-orange) [Alive2: bounded translation validation for LLVM](https://dl.acm.org/doi/abs/10.1145/3453483.3454030) — Lopes, Nuno P and Lee, Juneyoung and Hur, Chung-Kil and Liu, Zhengyang and Regehr, John
 
+- ![year](https://img.shields.io/badge/year-2013-blue) ![src](https://img.shields.io/badge/src-PASO-orange) [Data-driven equivalence checking](https://dl.acm.org/doi/10.1145/2509136.2509509) — Sharma, Rahul and Schkufza, Eric and Churchill, Berkeley and Aiken, Alex
+

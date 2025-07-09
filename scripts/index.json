@@ -1445,6 +1445,21 @@
     "link": "https://dl.acm.org/doi/abs/10.1145/3453483.3454030"
   },
   {
+    "id": "sharma2013data",
+    "title": "Data-driven equivalence checking",
+    "authors": "Sharma, Rahul and Schkufza, Eric and Churchill, Berkeley and Aiken, Alex",
+    "year": "2013",
+    "source": "Proceedings of the 2013 ACM SIGPLAN international conference on Object oriented programming systems languages \\& applications",
+    "category": "validation",
+    "keywords": [
+      "Assembly",
+      "SMT"
+    ],
+    "abstract": "We present a data driven algorithm for equivalence checking of two loops. The algorithm infers simulation relations using data from test runs. Once a candidate simulation relation has been obtained, off-the-shelf SMT solvers are used to check whether the simulation relation actually holds. The algorithm is sound: insufficient data will cause the proof to fail. We demonstrate a prototype implementation, called DDEC, of our algorithm, which is the first sound equivalence checker for loops written in x86 assembly.",
+    "bibtex": "@inproceedings{sharma2013data,\n abstract = {We present a data driven algorithm for equivalence checking of two loops. The algorithm infers simulation relations using data from test runs. Once a candidate simulation relation has been obtained, off-the-shelf SMT solvers are used to check whether the simulation relation actually holds. The algorithm is sound: insufficient data will cause the proof to fail. We demonstrate a prototype implementation, called DDEC, of our algorithm, which is the first sound equivalence checker for loops written in x86 assembly.},\n author = {Sharma, Rahul and Schkufza, Eric and Churchill, Berkeley and Aiken, Alex},\n booktitle = {Proceedings of the 2013 ACM SIGPLAN international conference on Object oriented programming systems languages \\& applications},\n keywords = {Assembly,SMT},\n link = {https://dl.acm.org/doi/10.1145/2509136.2509509},\n pages = {391--406},\n title = {Data-driven equivalence checking},\n year = {2013}\n}\n",
+    "link": "https://dl.acm.org/doi/10.1145/2509136.2509509"
+  },
+  {
     "id": "zhang2022heterogen",
     "title": "HeteroGen: transpiling C to heterogeneous HLS code with automated test generation and program repair",
     "authors": "Zhang, Qian and Wang, Jiyuan and Xu, Guoqing Harry and Kim, Miryung",
@@ -1531,5 +1546,21 @@
     "abstract": "In this paper, we introduce a new task for code completion that focuses on handling long code input and propose a sparse Transformer model, called LongCoder, to address this task. LongCoder employs a sliding window mechanism for self-attention and introduces two types of globally accessible tokens - bridge tokens and memory tokens - to improve performance and efficiency. Bridge tokens are inserted throughout the input sequence to aggregate local information and facilitate global interaction, while memory tokens are included to highlight important statements that may be invoked later and need to be memorized, such as package imports and definitions of classes, functions, or structures. We conduct experiments on a newly constructed dataset that contains longer code context and the publicly available CodeXGLUE benchmark. Experimental results demonstrate that LongCoder achieves superior performance on code completion tasks compared to previous models while maintaining comparable efficiency in terms of computational resources during inference.",
     "bibtex": "@inproceedings{guo2023longcoder,\n abstract = {In this paper, we introduce a new task for code completion that focuses on handling long code input and propose a sparse Transformer model, called LongCoder, to address this task. LongCoder employs a sliding window mechanism for self-attention and introduces two types of globally accessible tokens - bridge tokens and memory tokens - to improve performance and efficiency. Bridge tokens are inserted throughout the input sequence to aggregate local information and facilitate global interaction, while memory tokens are included to highlight important statements that may be invoked later and need to be memorized, such as package imports and definitions of classes, functions, or structures. We conduct experiments on a newly constructed dataset that contains longer code context and the publicly available CodeXGLUE benchmark. Experimental results demonstrate that LongCoder achieves superior performance on code completion tasks compared to previous models while maintaining comparable efficiency in terms of computational resources during inference.},\n author = {Guo, Daya and Xu, Canwen and Duan, Nan and Yin, Jian and McAuley, Julian},\n booktitle = {International Conference on Machine Learning},\n keywords = {longContext},\n link = {https://proceedings.mlr.press/v202/guo23j.html},\n organization = {PMLR},\n pages = {12098--12107},\n title = {Longcoder: A long-range pre-trained language model for code completion},\n year = {2023}\n}\n",
     "link": "https://proceedings.mlr.press/v202/guo23j.html"
+  },
+  {
+    "id": "schkufza2013stochastic",
+    "title": "Stochastic superoptimization",
+    "authors": "Schkufza, Eric and Sharma, Rahul and Aiken, Alex",
+    "year": "2013",
+    "source": "ACM SIGARCH Computer Architecture News",
+    "category": "superopt",
+    "keywords": [
+      "superopt",
+      "RL",
+      "Assembly"
+    ],
+    "abstract": "We formulate the loop-free binary superoptimization task as a stochastic search problem. The competing constraints of transformation correctness and performance improvement are encoded as terms in a cost function, and a Markov Chain Monte Carlo sampler is used to rapidly explore the space of all possible programs to find one that is an optimization of a given target program. Although our method sacrifices completeness, the scope of programs we are able to consider, and the resulting quality of the programs that we produce, far exceed those of existing superoptimizers. Beginning from binaries compiled by llvm -O0 for 64-bit x86, our prototype implementation, STOKE, is able to produce programs which either match or outperform the code produced by gcc -O3, icc -O3, and in some cases, expert handwritten assembly.",
+    "bibtex": "@article{schkufza2013stochastic,\n abstract = {We formulate the loop-free binary superoptimization task as a stochastic search problem. The competing constraints of transformation correctness and performance improvement are encoded as terms in a cost function, and a Markov Chain Monte Carlo sampler is used to rapidly explore the space of all possible programs to find one that is an optimization of a given target program. Although our method sacrifices completeness, the scope of programs we are able to consider, and the resulting quality of the programs that we produce, far exceed those of existing superoptimizers. Beginning from binaries compiled by llvm -O0 for 64-bit x86, our prototype implementation, STOKE, is able to produce programs which either match or outperform the code produced by gcc -O3, icc -O3, and in some cases, expert handwritten assembly.},\n author = {Schkufza, Eric and Sharma, Rahul and Aiken, Alex},\n journal = {ACM SIGARCH Computer Architecture News},\n keywords = {superopt,RL,Assembly},\n link = {https://dl.acm.org/doi/10.1145/2451116.2451150},\n number = {1},\n pages = {305--316},\n publisher = {ACM New York, NY, USA},\n title = {Stochastic superoptimization},\n volume = {41},\n year = {2013}\n}\n",
+    "link": "https://dl.acm.org/doi/10.1145/2451116.2451150"
   }
 ]
